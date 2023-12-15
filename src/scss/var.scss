@@ -1,0 +1,86 @@
+@import 'var_scss.scss';
+:root[lang='ko'] {
+  word-break: keep-all;
+}
+:root {
+  --color1: #4168f6;
+  --color2: #ff3838;
+  --text-color1: #303030;
+  --text-color2: #767676;
+  --text-color3: #a6a6a6;
+}
+:root {
+  --form-border-color: #e1e1e1;
+  --form-placeholder-color: #a6a6a6;
+}
+.Color1 {
+  color: var(--color1);
+}
+.Color2 {
+  color: var(--color2);
+}
+.TxtColor1 {
+  color: var(--text-color1);
+}
+.TxtColor2 {
+  color: var(--text-color2);
+}
+.TxtColor3 {
+  color: var(--text-color3);
+}
+:root {
+  /* iOS 11.0 버전 */
+  --sat: constant(safe-area-inset-top);
+  --sar: constant(safe-area-inset-right);
+  --sab: constant(safe-area-inset-bottom);
+  --sal: constant(safe-area-inset-left);
+  /* iOS 11.2 이상 */
+  --sat: env(safe-area-inset-top);
+  --sar: env(safe-area-inset-right);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  /**/
+  --body-min-wid: 360px; /* 웹사이트 최소 너비 */
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    --body-min-wid: 1024px;
+  }
+  --contents-max-wid: 1216px; /* 컨텐츠 최대 너비 */
+  --contents-side-padding: 16px; /* 컨텐츠 좌우 안쪽 여백 */
+  --real-side-padding: 0px; /* JS 에서 컨트롤 중 */
+  /**/
+  --header-hei: 64px;
+  --footer-hei: 50px;
+  --fullpage-footer-hei: 100px;
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    --header-hei: 90px;
+  }
+  /**/
+  --dashboard-header-hei: 70px;
+  --dashboard-leftside-wid:290px;
+}
+[data-env='development'] {
+  --sab: 20px;
+}
+/**/
+.StickyBox.Sticky > .FixedShell {
+  z-index: 99;
+}
+/**/
+.FixedBox {
+  > .FixedShell {
+    position: fixed;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+
+    &.Top {
+      top: 0;
+    }
+
+    &.Bottom {
+      bottom: 0;
+    }
+  }
+}

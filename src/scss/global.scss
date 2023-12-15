@@ -1,0 +1,562 @@
+@use 'var';
+@use 'reset';
+@use 'header';
+@use 'footer';
+@use 'text_input';
+@use 'select';
+@use 'dropdown';
+@use 'button';
+@use 'checkbox';
+@use 'radiobutton';
+@use 'layerpop';
+@use 'alert';
+@use 'bottom_sheet';
+@use 'component';
+@use 'lib';
+@import 'var_scss.scss';
+/**/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/**/
+html.Loading {
+  opacity: 0;
+}
+/**/
+#ContentsRuler {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999999;
+  position: fixed;
+  top: var(--mouse-y);
+  transform:translateY(-50%);
+  left: 0;
+  background-color: #0a7feb;
+  color: black;
+  width: 100%;
+  //min-width: var(--body-min-wid);
+  font-size: 16;
+  text-align: center;
+  .Inner {
+    background-color: yellow;
+  }
+  &.On{
+    opacity: 0.5;
+  }
+}
+html,
+body,
+input,
+select,
+textarea {
+  font-family:
+    'SUIT Variable',
+    'Montserrat',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    'Noto Sans',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+}
+body {
+  position: relative;
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    min-width: var(--body-min-wid);
+  }
+
+  &.PreventScroll {
+    position: fixed;
+    overflow-y: scroll;
+  }
+}
+#Page {
+  min-height: var(--vh-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > main {
+    flex-grow: 1;
+  }
+}
+/**/
+.Sticky {
+  z-index: 99;
+  position: sticky;
+  &.Top {
+    top: 0;
+  }
+  &.Bottom {
+    bottom: 0;
+  }
+}
+/**/
+img[src=''] {
+  display: none;
+}
+/**/
+.H1 {
+  font-weight: 900;
+  font-size: 2em;
+}
+.H2 {
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.H3 {
+  font-weight: 700;
+  font-size: 1.17em;
+}
+.H4 {
+  font-weight: 600;
+  font-size: 1em;
+}
+.H5 {
+  font-weight: 600;
+  font-size: 0.83em;
+}
+.H6 {
+  font-weight: 600;
+  font-size: 0.67em;
+}
+.LinkBtn {
+  color: #4168f6;
+  text-decoration: underline;
+}
+.LinkBtn:hover {
+  text-decoration: underline;
+}
+/**/
+.TopBetween {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+/**/
+.TopRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+/**/
+.CenterBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.CenterCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.CenterLeft {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.CenterRight {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+/**/
+.HBox {
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+
+  > .Inner {
+    max-width: var(--contents-max-wid);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/**/
+#Modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  &.On {
+    display: block;
+  }
+}
+/**/
+#LoadingSpinner {
+  display: none;
+  z-index: 150;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  background-image: url(/assets/icon/loading.svg);
+
+  &.On {
+    display: block;
+  }
+}
+/**/
+#BottomRightUtil {
+  outline: 1px dashed red;
+  z-index: 200;
+  position: fixed;
+  bottom: 88px;
+  right: 60;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  &.On {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+/**/
+.LayerPopup {
+  z-index: 111;
+  position: fixed;
+  top: 50%;
+  //left: 50%;
+  left: -100vw;
+  transform: translate(-50%, -50%);
+  transition: left 500ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  max-height: 100%;
+  overflow: auto;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.On {
+    left: 50%;
+  }
+  &.Bottom {
+    top: auto;
+    bottom: -100%;
+    transform: translate(-50%, 0%);
+    transition: bottom 500ms cubic-bezier(0.33, 1, 0.68, 1);
+    &.On {
+      bottom: 0;
+    }
+  }
+}
+.HideScroll {
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.SampleList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+
+  > * {
+    width: 100%;
+  }
+}
+/**/
+.Grayscale {
+  filter: grayscale(1) !important;
+}
+/**/
+.HScrollSnapBox {
+  scroll-snap-type: x mandatory;
+  > * {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+}
+/**/
+.HScrollGradientBox_1 {
+  @mixin mxHShadow {
+    width: 30px;
+    height: 100%;
+    top: 0px;
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: auto;
+  }
+
+  font-size: 0;
+  position: relative;
+
+  .Track {
+    width: 100%;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &:before {
+    @include mxHShadow;
+    left: 0px;
+    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.Start:before {
+    opacity: 0;
+  }
+
+  &:after {
+    @include mxHShadow;
+    right: 0px;
+    background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &.End:after {
+    opacity: 0;
+  }
+}
+/**/
+.FullPageSwiper {
+  --footer-hei: 500px;
+  --ori-top: -50px;
+
+  width: 100vw;
+  height: var(--vh-100);
+  transition: all 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+
+  &.MoveUp {
+    margin-top: calc(-1 * var(--footer-hei));
+    pointer-events: none;
+  }
+
+  .swiper-slide {
+    &.FooterSlide {
+      height: auto !important;
+    }
+
+    .MouseIcon {
+      z-index: 10;
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .AnimateTarget {
+      will-change: auto;
+      position: relative;
+      //transition: all 1000ms cubic-bezier(0.33, 1, 0.68, 1);
+      opacity: 0;
+    }
+
+    &.swiper-slide-next {
+      .AnimateTarget {
+        top: 100px;
+      }
+    }
+
+    &.swiper-slide-prev {
+      .AnimateTarget {
+        top: -100px;
+      }
+    }
+
+    @keyframes moveText {
+      from {
+        opacity: 0;
+        top: var(--ori-top);
+      }
+      to {
+        opacity: 1;
+        top: 0px;
+      }
+    }
+
+    &.swiper-slide-active {
+      &.FirstPlay {
+        .AnimateTarget {
+          animation-duration: 0ms;
+          animation-delay: 0ms !important;
+        }
+      }
+
+      .AnimateTarget {
+        animation-name: moveText; /* keyframename|none|initial|inherit; */
+        animation-duration: 500ms; /* time|initial|inherit; */
+        //animation-delay: 2s; /* time|initial|inherit; */
+        animation-iteration-count: 1; /* number|infinite|initial|inherit; */
+        //animation-direction: alternate; /* normal|reverse|alternate|alternate-reverse|initial|inherit; */
+        //animation-fill-mode: forwards; /* none|forwards|backwards|both|initial|inherit; */
+        //animation-play-state: paused; /* paused|running|initial|inherit; */
+        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1); /* linear|ease|ease-in|ease-out|cubic-bezier(n,n,n,n)|initial|inherit;*/
+        animation-fill-mode: forwards; /* backwards|forwards|both|none */
+      }
+    }
+  }
+
+  section {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    > .Bg {
+      z-index: 0;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+
+      &:after {
+        background-color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        content: '';
+        position: absolute;
+        z-index: 3;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      > * {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //background-image: url(/assets/icon/basic/noimage.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100px;
+      }
+    }
+
+    > .Inner {
+      padding: 0 var(--contents-side-padding);
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.FullPageSwiper-Pagenation {
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+
+  > .Dot {
+    background-color: yellow;
+
+    &.On {
+      background-color: red;
+    }
+  }
+}
+
+.FullPageSwiper-PagenationProgressbar {
+  z-index: 10;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 500px;
+  right: 130px;
+  background-color: rgba(255, 255, 255, 0.3);
+
+  .FillBar {
+    height: 100%;
+    background-color: white;
+    transform-origin: top;
+  }
+}
+/**/
+.WheelDownHScrollWrap {
+  background-color: #ffffd4;
+
+  > .Inner {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+
+    overflow: hidden;
+    display: flex;
+    gap: 0px;
+
+    > div {
+      outline: 1px dashed red;
+      width: 100vw;
+      height: 100%;
+      font-size: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+
+      &.On {
+        background-color: pink;
+      }
+    }
+  }
+}
+/**/
+.CollapseAbleBox {
+  overflow: hidden;
+  transition: all 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  &:not(.On) {
+    max-height: 0 !important;
+  }
+}
+/**/
+.FormLabelBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+/**/
+.TabChildList {
+  > .TabChild {
+    z-index: 10;
+    position: fixed;
+    top: -200vh;
+    width: 100%;
+
+    &.On {
+      position: relative;
+      top: 0vh;
+    }
+  }
+}

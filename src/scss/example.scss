@@ -1,0 +1,38 @@
+@import 'var_scss.scss';
+/**
+ * for 퍼블리싱
+ */
+html {
+  background-color: #ffffd4;
+}
+main{
+  padding-bottom:200px;
+}
+main > section {
+  margin-bottom: 50px;
+}
+main > section .FixedShell {
+  position: relative !important;
+}
+.BtnSampleTable {
+  background-color: white;
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100%;
+
+  th {
+    background-color: #666;
+    color: white;
+    font-weight: 800;
+  }
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 20px;
+    vertical-align: top;
+
+    button + button {
+      margin-top: 20px;
+    }
+  }
+}

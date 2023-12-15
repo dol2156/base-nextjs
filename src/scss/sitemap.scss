@@ -1,0 +1,95 @@
+@import 'var_scss.scss';
+/**
+ * for 퍼블리싱
+ */
+html {
+  background: linear-gradient(-45deg, #ee7752, #fff980, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 3s ease infinite;
+  height: 100%;
+  background-attachment: fixed;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 20%;
+  }
+  50% {
+    background-position: 100% 20%;
+  }
+  100% {
+    background-position: 0% 20%;
+  }
+}
+/**/
+#Sitemap {
+  padding: 20px;
+
+  .PageLink {
+    color: #0a7feb;
+  }
+
+  .ExternalLink {
+    color: mediumpurple;
+  }
+
+  .NoLink {
+    padding: 0;
+  }
+
+  .PageKey {
+    color: #ff8352;
+  }
+
+  li {
+    padding: 5px 10px;
+  }
+
+  > ul {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    /* $PcMinWid 이상 화면*/
+    @media screen and (min-width: $PcMinWid) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    > li {
+      background-color: white;
+      border-radius: 5px;
+      border: 2px solid black;
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 0 10px;
+        border-radius: 3px;
+
+        /* 767px 이하 화면*/
+        @media screen and (max-width: 767px) {
+          display: block;
+        }
+
+        &[href] {
+          border: 1px solid #f2f2f2;
+
+          &:hover {
+            background-color: #fbff59;
+            border-color: gold;
+          }
+
+          &:focus,
+          &:active {
+            outline: 1px dashed red;
+            background-color: pink;
+          }
+
+          .Link {
+            color: #25ba00;
+          }
+        }
+      }
+    }
+  }
+}

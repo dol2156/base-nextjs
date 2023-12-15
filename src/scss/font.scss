@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/font/Montserrat-VF.woff2') format('woff');
+  font-display: block;
+}
+.Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@font-face {
+  font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+  src: local('Pretendard Variable'), url('/font/PretendardVariable.woff2') format('woff2-variations');
+}
+.Pretendard {
+  font-family: 'Pretendard Variable', sans-serif;
+}
+
+@font-face {
+  font-family: 'SUIT Variable';
+  font-weight: 100 900;
+  src: local('SUIT Variable Regular'), url('/font/SUIT-Variable.woff2') format('woff2-variations');
+}
+.SUIT_Variable {
+  font-family: 'SUIT Variable', sans-serif;
+}

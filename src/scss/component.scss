@@ -1,0 +1,619 @@
+@import 'var_scss.scss';
+/**/
+.AutoCompleteBox_1 {
+  position: relative;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  /* 2023-09-05 :: START :: TEST */
+  .autoComplete_wrapper {
+    & > ul[hidden],
+    & > ul:empty {
+      /*opacity:1!important;*/
+      /*transform:none!important;*/
+    }
+  }
+  /* // 2023-09-05 :: END :: TEST */
+  .autoComplete_wrapper {
+    position: static;
+    outline: 1px dashed red;
+
+    flex: 1;
+    > input {
+      width: 100%;
+      height: 48px;
+      border: none;
+      border-radius: 0;
+      background: transparent;
+      padding: 0px !important;
+      font-size: 14px !important;
+      color: #303030 !important;
+      &::placeholder {
+        color: #a6a6a6 !important;
+        font-size: 14px !important;
+        padding: 0 !important;
+      }
+    }
+    > ul > li {
+      margin: 5px;
+      padding: 10px;
+    }
+    .no_result {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .ResultCountInfo {
+      /*display:none;*/
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  button {
+    outline: 1px dashed red;
+    width: 30px;
+  }
+
+  .BtnRemoveInputValue {
+    visibility: hidden;
+  }
+
+  &.HasValue {
+    .BtnRemoveInputValue {
+      visibility: visible;
+    }
+  }
+}
+
+/**/
+.Badge_1 {
+  border-radius: 14px;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0px 10px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  font-size: 12px;
+  font-weight: 600;
+  border-color: #767676;
+  color: #767676;
+
+  &.Theme_1 {
+    border-color: #4168f6;
+    color: #4168f6;
+  }
+}
+/**/
+.DescBox_1 {
+  width: 100%;
+  text-align: center;
+  border-radius: 8px;
+  background: #f4f4f4;
+  padding: 12px 10px;
+  font-weight: 400;
+  color: var(--text-color1);
+  font-size: 14px;
+  line-height: 20px;
+}
+/**/
+.DescBox_2 {
+  border-radius: 6px;
+  border: 1px solid var(--sub-border-2, #e1e1e1);
+  background: var(--sub-backgraound, #ffffff);
+  padding: 16px;
+
+  .Txt1 {
+    text-align: left;
+    color: #303030;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}
+/**/
+.DescList_1 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.25em;
+  > li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    &:before {
+      content: '-';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      margin-right: 0.3em;
+    }
+    + li {
+      margin-top: 0.2em;
+    }
+  }
+}
+/**/
+.DescList_2 {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  > li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 0px;
+    &:before {
+      content: '\2022';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      margin-right: 0.3em;
+    }
+    + li {
+      margin-top: 0.2em;
+    }
+  }
+}
+/**/
+.DescList_3 {
+  --p-left: 1.5em;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  width: calc(100% - var(--p-left));
+  //list-style: auto;
+  list-style: hangul;
+  margin-left: var(--p-left);
+  li + li {
+    margin-top: 0.5em;
+  }
+}
+/**/
+.HScrollSnapBox_1 {
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  gap: 25px;
+  overflow: auto;
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+
+  .BannerImg {
+    > img {
+      border-radius: 10px;
+    }
+  }
+}
+/**/
+.BottomBtnBox_1 {
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  box-shadow: 0px -4px 10px 0px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  > * {
+    flex: 1;
+  }
+
+  .C-274b091b {
+    color: #303030;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+}
+/**/
+.BottomNavi_1 {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 0;
+  box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 4px;
+  padding-bottom: 3px;
+  padding-bottom: calc(3px + var(--sab, 0px));
+  button {
+    color: var(--text-color1);
+    height: 50px;
+    border-radius: 12px;
+    .Icon {
+      svg {
+        width: 24px;
+      }
+    }
+    .Label {
+      font-size: 10px;
+      font-weight: 400;
+    }
+    &.On {
+      .Label {
+        color: #ea2c2c;
+        font-weight: 600;
+      }
+    }
+  }
+}
+/**/
+.CardList_1 {
+  > ul {
+    overflow: auto;
+    padding-left: var(--contents-side-padding);
+    padding-right: var(--contents-side-padding);
+    display: inline-flex;
+    white-space: nowrap;
+    gap: 10px;
+  }
+}
+/**/
+.ChipsList_1 {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding-left: var(--contents-side-padding);
+  padding-right: var(--contents-side-padding);
+  button {
+    color: #767676;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    &.On {
+      color: white;
+      border-color: #ff3838;
+      background-color: #ff3838;
+    }
+  }
+}
+/**/
+.Divider_1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  height: 6px;
+  border-bottom: 1px solid #e1e1e1;
+  background: #ebebeb;
+}
+/**/
+.DungDung_1 {
+  @keyframes UpAndDown {
+    0%,
+    100% {
+      transform: translate(0%, 0%);
+      animation-timing-function: ease-out;
+    }
+    50% {
+      transform: translate(0%, 20px);
+      animation-timing-function: ease-in;
+    }
+  }
+  > * {
+    animation: UpAndDown 1000ms infinite;
+  }
+}
+/**/
+.EmptyList_1 {
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 90px;
+  text-align: center;
+  color: #767676;
+  line-height: 20px;
+
+  .Txt1 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .Txt2 {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+/**/
+.LinkList_1 {
+  background-color: white;
+  border: 1px solid #ebebeb;
+  border-radius: 8px;
+
+  > ul {
+    > li {
+      a {
+        color: #303030;
+        font-size: 14px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0px;
+        height: 60px;
+        padding: 0 16px;
+      }
+    }
+
+    > li + li {
+      border-top: 1px solid #ebebeb;
+    }
+  }
+}
+/**/
+.OptionBox_1 {
+  border-radius: 10px;
+  background: var(--sub-white, #ffffff);
+  padding: 20px;
+}
+/**/
+.RadioGroup_1 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid #ebebeb;
+  border-left: 1px solid #ebebeb;
+  background-color: white;
+
+  > label {
+    border-bottom: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    height: 40px;
+    cursor: pointer;
+    position: relative;
+    color: #161616;
+    font-size: 12px;
+    font-weight: 400;
+
+    > input {
+      z-index: 0;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      appearance: none;
+      background-color: transparent;
+
+      &:checked {
+        background-color: #ff3838;
+
+        + .Label {
+          color: white;
+        }
+      }
+
+      &:disabled {
+        background-color: #f4f4f4;
+
+        + .Label {
+          color: #a6a6a6;
+        }
+      }
+    }
+
+    > .Label {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+    }
+  }
+}
+/**/
+.TabBar_1 {
+  //background-color: white;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //gap: 0px;
+  //padding-left: 10px;
+  //padding-right: 10px;
+  //border-bottom: 1px solid #ebebeb;
+  //height: 50px;
+  > button {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    color: var(--text-color1);
+    font-size: 14px;
+    font-weight: 600;
+    &.On {
+      color: #ff3838;
+      &:after {
+        background-color: #ff3838;
+        width: 100%;
+        height: 2px;
+        bottom: -1px;
+        left: 0px;
+        display: inline-block;
+        content: '';
+        position: absolute;
+        z-index: 3;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}
+/**/
+.ToastMsg_1 {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - calc(var(--contents-side-padding) * 2));
+  text-align: center;
+  border-radius: 8px;
+  background-color: rgb(48, 48, 48, 0.7);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 22px 0;
+}
+/**/
+.TreeMenu_1 {
+  background-color: white;
+  user-select: none;
+
+  * {
+    position: relative;
+  }
+
+  .Label {
+    cursor: pointer;
+  }
+
+  > ul {
+    > li {
+      border-bottom: 1px solid #ddd;
+
+      &:first-child {
+        border-top: 1px solid #ddd;
+      }
+
+      > .Label {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: left;
+        width: 100%;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        gap: 0px;
+        font-size: 24px;
+      }
+
+      > .ChildList {
+        > ul {
+          > li {
+            border-top: 1px dashed #ddd;
+
+            > .Label {
+              padding-left: calc(20px + 20px);
+              padding-right: 20px;
+              text-align: left;
+              width: 100%;
+              min-height: 40px;
+              display: flex;
+              align-items: center;
+              gap: 0px;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/**/
+.ToggleUi {
+  width: 48px;
+  height: 28px;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  &[data-size='Lg'] {
+    width: 24px;
+  }
+  &.Style1 {
+    background-image: url(/assets/icon/basic/toggle_1.svg);
+    &:checked {
+      background-image: url(/assets/icon/basic/toggle_1_on.svg);
+    }
+    &[disabled] {
+      opacity: 0.4;
+    }
+  }
+}
+/**/
+.PagingSet_1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .NavBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    > a {
+      outline:1px dashed red;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      padding: 4px;
+      box-sizing: border-box;
+      color: #333;
+      &:hover {
+        color: white;
+        background-color: #5d45ff;
+      }
+
+      > svg {
+        width: 100%;
+      }
+    }
+  }
+
+  .NumBtnBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    > a {
+      outline:1px dashed blue;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+      box-sizing: border-box;
+      color: #333;
+      &:hover {
+        color: white;
+        background-color: #5d45ff;
+      }
+    }
+  }
+}
