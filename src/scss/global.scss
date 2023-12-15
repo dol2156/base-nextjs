@@ -22,28 +22,6 @@
 html.Loading {
   opacity: 0;
 }
-/**/
-#ContentsRuler {
-  opacity: 0;
-  pointer-events: none;
-  z-index: 999999;
-  position: fixed;
-  top: var(--mouse-y);
-  transform:translateY(-50%);
-  left: 0;
-  background-color: #0a7feb;
-  color: black;
-  width: 100%;
-  //min-width: var(--body-min-wid);
-  font-size: 16;
-  text-align: center;
-  .Inner {
-    background-color: yellow;
-  }
-  &.On{
-    opacity: 0.5;
-  }
-}
 html,
 body,
 input,

@@ -10,7 +10,6 @@ export default function AppInfo() {
 
   useEffect(() => {
     // mount
-    console.log('AppInfo.jsx mount');
     infoDeviceOS();
     infoWhellDirection();
     infoOnTouch();
@@ -59,8 +58,8 @@ export default function AppInfo() {
           </button>
         </div>
       </div>
-      <div id="ContentsRuler" className="HBox">
-        <div className="RR Inner">컨텐츠 너비 줄자</div>
+      <div id="ContentsRuler" className="HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-[--mouse-y] translate-y-[-50%] left-0 bg-[#0a7feb]">
+        <div className="RR Inner bg-[yellow]">컨텐츠 너비 줄자</div>
       </div>
     </>
   );
