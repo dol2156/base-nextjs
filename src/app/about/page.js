@@ -3,7 +3,7 @@
 export default function Page() {
   return (
     <>
-      <main>src/app/page.js</main>
+      <main>src/app/about/page.js</main>
     </>
   );
 }
