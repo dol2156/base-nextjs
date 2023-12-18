@@ -26,7 +26,7 @@ export default function CheckboxList_1() {
         <div className="CenterLeft bg-white">
           <label className="FormLabelBox">
             <input className="Checkbox_1" type="checkbox" />
-            <div className="text-[#161616] text-[12px] font-[400]">로그인 상태 유지</div>
+            <div className="LabalUi">로그인 상태 유지</div>
           </label>
         </div>
       </div>

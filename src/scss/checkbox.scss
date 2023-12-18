@@ -47,21 +47,6 @@
   }
 }
 /**/
-.Checkbox_2 {
-  @include mixinCheckBoxPublic;
-  @include chkSizeVariation;
-  background-image: url(/icon/basic/chk_2.svg);
-  &:checked {
-    background-image: url(/icon/basic/chk_2_on.svg);
-    + .LabalUi {
-      color: #ff3838;
-    }
-  }
-  &[disabled] {
-    background-image: url(/icon/basic/chk_2_disabled.svg);
-  }
-}
-/**/
 .ToggleButton_1 {
   width: 48px;
   height: 28px;
