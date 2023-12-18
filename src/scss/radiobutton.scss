@@ -14,6 +14,9 @@
   background-image: url(/icon/basic/rdo_1.svg);
   &:checked {
     background-image: url(/icon/basic/rdo_1_on.svg);
+    + .LabalUi {
+      color: #ff3838 !important;
+    }
   }
   &[disabled] {
     background-image: url(/icon/basic/rdo_1_disabled.svg);

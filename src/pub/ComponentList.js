@@ -56,6 +56,11 @@ ComponentList.bottom_sheet = [];
       경로 : '@/components/common/PagingSet_1',
       컴포넌트 : dynamic(() => import('@/components/common/PagingSet_1'), { ssr : false }),
     });
+    ComponentList.dropdown = [];
+    ComponentList.dropdown.push({
+      경로 : '@/components/dropdown/Dropdown_1',
+      컴포넌트 : dynamic(() => import('@/components/dropdown/Dropdown_1'), { ssr : false }),
+    });
     ComponentList.etc = [];
     ComponentList.etc.push({
       경로 : '@/components/etc/AppInfo',
@@ -115,6 +120,31 @@ ComponentList.bottom_sheet = [];
     ComponentList.meta.push({
       경로 : '@/components/meta/Head_1',
       컴포넌트 : dynamic(() => import('@/components/meta/Head_1'), { ssr : false }),
+    });
+    ComponentList.radiobutton = [];
+    ComponentList.radiobutton.push({
+      경로 : '@/components/radiobutton/RadioButtonList_1',
+      컴포넌트 : dynamic(() => import('@/components/radiobutton/RadioButtonList_1'), { ssr : false }),
+    });
+    ComponentList.select = [];
+    ComponentList.select.push({
+      경로 : '@/components/select/SelectBox_1',
+      컴포넌트 : dynamic(() => import('@/components/select/SelectBox_1'), { ssr : false }),
+    });
+    ComponentList.textinput = [];
+    ComponentList.textinput.push({
+      경로 : '@/components/textinput/FormMsg',
+      컴포넌트 : dynamic(() => import('@/components/textinput/FormMsg'), { ssr : false }),
+    });
+    
+    ComponentList.textinput.push({
+      경로 : '@/components/textinput/TextInput_1',
+      컴포넌트 : dynamic(() => import('@/components/textinput/TextInput_1'), { ssr : false }),
+    });
+    
+    ComponentList.textinput.push({
+      경로 : '@/components/textinput/Textarea_1',
+      컴포넌트 : dynamic(() => import('@/components/textinput/Textarea_1'), { ssr : false }),
     });
     
 export default ComponentList;
