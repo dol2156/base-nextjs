@@ -50,9 +50,6 @@ pageScroll.Bottom = () => {
 
 /* 2023-10-21 :: START :: modalControl */
 const modalControl = {};
-modalControl.init = () => {
-  const $modal = document.querySelector(`#Modal`);
-};
 
 modalControl.On = () => {
   const $modal = document.querySelector(`#Modal`);
@@ -65,8 +62,37 @@ modalControl.Off = () => {
 };
 /* // 2023-10-21 :: END :: modalControl */
 
+/* 2023-10-21 :: START :: layerControl */
+const layerControl = {};
+
+/**
+ *
+ * @param layer_id
+ * @constructor
+ */
+layerControl.On = (layer_id, callback) => {
+  modalControl.On();
+
+  const el_layer_id = document.querySelector(layer_id);
+  el_layer_id.classList.add(`On`);
+};
+
+/**
+ * @param layer_id
+ * @constructor
+ */
+layerControl.Off = () => {
+  modalControl.Off();
+
+  const el_layer_list = document.querySelectorAll(`.LayerPopup`);
+  el_layer_list.forEach((el_layer, idx) => {
+    el_layer.classList.remove(`On`);
+  });
+};
+/* // 2023-10-21 :: END :: layerControl */
+
 const appIsReady = () => {
   const $html = document.documentElement;
   $html.classList.remove('Loading');
 };
-export { initCssVar, appIsReady, pageScroll };
+export { initCssVar, appIsReady, pageScroll, modalControl, layerControl };

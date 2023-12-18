@@ -1,6 +1,7 @@
 'use client';
 
 import AppInfo from '@/components/etc/AppInfo';
+import Modal from '@/components/etc/Modal';
 import BottomRightUtil_1 from '@/components/layout/BottomRightUtil_1';
 import Head_1 from '@/components/meta/Head_1';
 import { appIsReady, initCssVar } from '@/js/common';
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
       <Head_1 />
       <body>
         <AppInfo />
-        <div id="Modal" className="hidden [&.On]:block bg-[rgba(0,0,0,0.5)] z-[100] fixed top-0 left-0 w-full h-full"></div>
+        <Modal />
         <div id="LoadingSpinner" className="hidden [&.On]:block z-[150] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px]">
           <img src="/icon/loading.svg" alt="" />
         </div>

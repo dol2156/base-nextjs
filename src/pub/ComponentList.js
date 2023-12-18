@@ -8,6 +8,11 @@ ComponentList.etc = [];
     });
     
     ComponentList.etc.push({
+      경로 : '@/components/etc/Modal',
+      컴포넌트 : dynamic(() => import('@/components/etc/Modal'), { ssr : false }),
+    });
+    
+    ComponentList.etc.push({
       경로 : '@/components/etc/SiteMapLink',
       컴포넌트 : dynamic(() => import('@/components/etc/SiteMapLink'), { ssr : false }),
     });
