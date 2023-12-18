@@ -38,7 +38,6 @@ export default function Page() {
         <h1 className="H1 Sticky Top">Layerpop</h1>
         <section className={`HBox`}>
           <div className="Inner">
-            <h2 className="H2 mb-[10px]">AAA</h2>
             <button className={`Button_1`} onClick={onOpenTooltip}>
               Open ToolTip_1
             </button>
@@ -54,7 +53,9 @@ export default function Page() {
         </section>
       </main>
       <div ref={ref_tooltip} className={`LayerPopup`}>
-        <ToolTip_1 />
+        <div>
+          <ToolTip_1 />
+        </div>
       </div>
       <div ref={ref_confirm} className={`LayerPopup`}>
         <Confirm_1 />
