@@ -4,67 +4,32 @@ import { Fragment } from 'react';
 export default function CheckboxList_1() {
   return (
     <>
-      <table className="BtnSampleTable">
-        <thead>
-          <tr>
-            <th>Lg : 30px</th>
-            <th>Md : 24px</th>
-            <th>Sm : 24px</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {['Lg', 'Md', 'Sm'].map((obj, idx) => {
-              return (
-                <Fragment key={idx}>
-                  <td>
-                    <button className="text-left">
-                      <label className="FormLabel_1">Basic</label>
-                      <div className="CenterLeft">
-                        <input className={`Checkbox_1 ${obj}`} type="checkbox" />
-                      </div>
-                    </button>
-                    <button className="text-left">
-                      <label className="FormLabel_1">Checked</label>
-                      <div className="CenterLeft">
-                        <input className={`Checkbox_1 ${obj}`} type="checkbox" defaultChecked />
-                      </div>
-                    </button>
-                    <button className="text-left">
-                      <label className="FormLabel_1">Disabled</label>
-                      <div className="CenterLeft">
-                        <input className={`Checkbox_1 ${obj}`} type="checkbox" disabled />
-                      </div>
-                    </button>
-                    <button className="text-left">
-                      <label className="FormLabel_1">LabalUi</label>
-                      <div className="CenterLeft">
-                        <label className="FormLabelBox">
-                          <input className={`Checkbox_1 ${obj}`} type="checkbox" />
-                          <div className="LabalUi">
-                            Checkbox_{idx} {obj}
-                          </div>
-                        </label>
-                      </div>
-                    </button>
-                    <button className="text-left">
-                      <label className="FormLabel_1">LabalUi_Disabled</label>
-                      <div className="CenterLeft">
-                        <label className="FormLabelBox">
-                          <input className={`Checkbox_1 ${obj}`} type="checkbox" disabled />
-                          <div className="LabalUi">
-                            Checkbox_{idx} {obj}
-                          </div>
-                        </label>
-                      </div>
-                    </button>
-                  </td>
-                </Fragment>
-              );
-            })}
-          </tr>
-        </tbody>
-      </table>
+      <div className="SampleList p-[10px]">
+        <label className="FormLabel_1">Basic</label>
+        <div className="bg-white p-[10px] border-solid border-[1px] border-[#000] flex flex-col pc:grid pc:grid-cols-[repeat(auto-fit,minmax(0,1fr))] pc:gap-[10px] pc:items-center pc:justify-center">
+          {['Xl', 'Lg', 'Md', 'Sm'].map((obj, idx) => {
+            return (
+              <Fragment key={idx}>
+                <div>
+                  <div>{obj}</div>
+                  <input className={`Checkbox_1 ${obj}`} type="checkbox" />
+                </div>
+              </Fragment>
+            );
+          })}
+        </div>
+        <label className="FormLabel_1">[disabled]</label>
+        <div className="CenterLeft bg-white">
+          <input className="Checkbox_1" type="checkbox" disabled />
+        </div>
+        <label className="FormLabel_1">+ Text</label>
+        <div className="CenterLeft bg-white">
+          <label className="FormLabelBox">
+            <input className="Checkbox_1" type="checkbox" />
+            <div className="text-[#161616] text-[12px] font-[400]">로그인 상태 유지</div>
+          </label>
+        </div>
+      </div>
     </>
   );
 }
