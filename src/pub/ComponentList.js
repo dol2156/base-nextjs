@@ -11,6 +11,16 @@ ComponentList.etc = [];
       경로 : '@/components/etc/SiteMapLink',
       컴포넌트 : dynamic(() => import('@/components/etc/SiteMapLink'), { ssr : false }),
     });
+    ComponentList.header = [];
+    ComponentList.header.push({
+      경로 : '@/components/header/Aside_1',
+      컴포넌트 : dynamic(() => import('@/components/header/Aside_1'), { ssr : false }),
+    });
+    
+    ComponentList.header.push({
+      경로 : '@/components/header/TopActionBar_1',
+      컴포넌트 : dynamic(() => import('@/components/header/TopActionBar_1'), { ssr : false }),
+    });
     ComponentList.layout = [];
     ComponentList.layout.push({
       경로 : '@/components/layout/Footer_1',

@@ -7,7 +7,13 @@ export default function Page() {
   return (
     <>
       <Header_1 />
-      <main>Base</main>
+      <main>
+        <section className={`HBox`}>
+          <div className="Inner">
+            <div>src/app/basic/main/page.js</div>
+          </div>
+        </section>
+      </main>
       <Footer_1 />
     </>
   );
