@@ -1,0 +1,542 @@
+@import 'var_scss.scss';
+/**/
+.FormMsg {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  &.Type1 {
+    color: #9af;
+  }
+  &.Type2 {
+    color: #f3436d;
+  }
+}
+/**/
+.FormLabel_1 {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+/**/
+.TextInput_1 {
+  /*fixed*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  outline: none;
+
+  /*dynamic*/
+  height: 40px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+
+  &.Sm {
+    height: 32px;
+  }
+
+  &.Lg {
+    height: 44px;
+  }
+
+  &.Xl {
+    height: 52px;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    /*dynamic*/
+    height: 48px;
+
+    &.Sm {
+      height: 40px;
+    }
+
+    &.Lg {
+      height: 52px;
+    }
+
+    &.Xl {
+      height: 60px;
+    }
+  }
+
+  background-color: white;
+  border: 1px solid var(--form-border-color);
+  padding: 0 1em;
+
+  > input {
+    display: block;
+    outline: none;
+    border: none;
+    flex-grow: 1;
+    width: 0;
+    height: 100%;
+    background-color: transparent;
+    &::placeholder {
+      color: var(--form-placeholder-color);
+    }
+  }
+
+  > button {
+    font-size: inherit;
+    aspect-ratio: 9/16;
+    min-width: 24px;
+    height: 100%;
+    > img {
+      margin-left: auto;
+      margin-right: auto;
+      //width: 90%;
+    }
+  }
+
+  .ResetBtn {
+    visibility: hidden;
+  }
+
+  &.HasValue {
+    .ResetBtn {
+      visibility: visible;
+    }
+  }
+
+  &.HasValue {
+    border-color: #333333;
+    background-color: white;
+  }
+
+  &.Focus,
+  &:focus {
+    border-color: #a6a6a6;
+    background: #ffffff;
+    box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+  }
+  &.Error {
+    border-color: #ff3838;
+    > input {
+      color: #ff3838;
+    }
+  }
+  &.Success {
+    border-color: #4168f6;
+  }
+  &.ReadOnly {
+    color: #a6a6a6;
+    background-color: #e1e1e1;
+    border-color: #a6a6a6;
+  }
+}
+/**/
+.Textarea_1 {
+  width: 100%;
+  resize: vertical;
+  outline: none;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  color: #303030;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4em;
+  border: 1px solid var(--form-border-color);
+  background-color: white;
+
+  &::placeholder {
+    color: var(--form-placeholder-color);
+  }
+
+  &.Error {
+    border-color: #ff3838;
+  }
+}
+/**/
+/**
+ * 마우스 인터렉션 상태에 따라 아이콘을 변경하는 버튼에 포함되는 믹스인
+ */
+@mixin imgChangeAbleBtnByState {
+  .Hover {
+    display: none;
+  }
+  .Active {
+    display: none;
+  }
+  .Default {
+    display: block;
+  }
+
+  &:hover {
+    .Default {
+      display: none;
+    }
+    .Active {
+      display: none;
+    }
+    .Hover {
+      display: block;
+    }
+  }
+
+  &.On,
+  &:active {
+    .Default {
+      display: none;
+    }
+    .Hover {
+      display: none;
+    }
+    .Active {
+      display: block;
+    }
+  }
+}
+
+@mixin ButtonSizeVariation {
+  /*fixed*/
+  display: flex;
+  padding: 0 1.25em;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-style: solid;
+  gap: 5px;
+
+  /*dynamic*/
+  height: 40px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  border-width: 1px;
+
+  &.Sm {
+    height: 32px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &.Lg {
+    height: 44px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &.Xl {
+    height: 52px;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    /*dynamic*/
+    height: 48px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-width: 1px;
+
+    &.Sm {
+      height: 40px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &.Lg {
+      height: 52px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    &.Xl {
+      height: 60px;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+}
+
+@mixin ButtonThemeSet($border_color: inherit, $bg: inherit, $color: inherit) {
+  border-color: $border_color;
+  background-color: $bg;
+  color: $color;
+}
+/**/
+.Button_1 {
+  @include imgChangeAbleBtnByState;
+  @include ButtonSizeVariation;
+  @include ButtonThemeSet(#0d6efd, #ffffff, #0d6efd);
+  &:hover {
+    @include ButtonThemeSet(#0d6efd, #0b5ed7, #ffffff);
+  }
+  &:disabled {
+    @include ButtonThemeSet(#999999, #ddd, #999999);
+  }
+}
+/**/
+.Button_2 {
+  @include imgChangeAbleBtnByState;
+  @include ButtonSizeVariation;
+  @include ButtonThemeSet(#dc3545, #ffffff, #dc3545);
+  &:hover {
+    @include ButtonThemeSet(#dc3545, #b02a37, #ffffff);
+  }
+  &:disabled {
+    @include ButtonThemeSet(#999999, #ddd, #999999);
+  }
+}
+/**/
+.Btn_0 {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.25em;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  border: 1px solid red;
+
+  @include ButtonThemeSet(#333, #999, #fff);
+
+  &:hover {
+    @include ButtonThemeSet(#333, #fff, #333);
+  }
+  &:active {
+    @include ButtonThemeSet(red, blue, green);
+  }
+  @include imgChangeAbleBtnByState;
+}
+/**/
+@mixin mixinCheckBoxPublic {
+  aspect-ratio: 1;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@mixin chkSizeVariation {
+  width: 18px;
+  &.Sm {
+    width: 12px;
+  }
+  &.Lg {
+    width: 24px;
+  }
+  &.Xl {
+    width: 30px;
+  }
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    width: 24px;
+    &.Sm {
+      width: 18px;
+    }
+    &.Lg {
+      width: 30px;
+    }
+    &.Xl {
+      width: 36px;
+    }
+  }
+}
+/**/
+.Checkbox_1 {
+  @include mixinCheckBoxPublic;
+  @include chkSizeVariation;
+  background-image: url(/icon/basic/chk_1.svg);
+  &:checked {
+    background-image: url(/icon/basic/chk_1_on.svg);
+    + .LabalUi {
+      color: #ff3838 !important;
+    }
+  }
+  &[disabled] {
+    background-image: url(/icon/basic/chk_1_disabled.svg);
+  }
+}
+/**/
+.ToggleButton_1 {
+  width: 48px;
+  height: 28px;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: background-image 300ms cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: auto;
+  background-image: url(/icon/basic/toggle_1.svg);
+  &:checked {
+    background-image: url(/icon/basic/toggle_1_on.svg);
+  }
+  &[disabled] {
+    opacity: 0.4;
+  }
+}
+/**/
+.Dropdown_1 {
+  --height: 34px;
+  --visible-count: 5;
+
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--form-border-color);
+  border-radius: 0.5em;
+  font-size: 12px;
+  font-weight: 400;
+
+  > .Head {
+    border-radius: 0.5em;
+    padding: 0px 1em;
+    font-size: 12px;
+    color: #999;
+    height: var(--height);
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    outline: none;
+    background-image: url(/icon/basic/sel_1.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-color: white;
+  }
+
+  &[data-value] > .Head {
+    color: black;
+  }
+
+  > .Body {
+    border-radius: 0.5em;
+    z-index: 10;
+    position: absolute;
+    top: calc(var(--height) + 5px);
+    left: -1px;
+    width: 100%;
+    max-height: calc(var(--height) * var(--visible-count));
+    overflow: auto;
+    background-color: white;
+    /**/
+    border: 1px solid var(--form-border-color);
+    box-sizing: content-box;
+    display: none;
+
+    &.Top {
+      top: auto;
+      bottom: calc(var(--height) + 5px);
+    }
+
+    > .OptionBtn {
+      padding: 0px 1em;
+      font-size: 12px;
+      height: var(--height);
+      display: flex;
+      align-items: center;
+      gap: 0px;
+      &:hover,
+      &.Selected {
+        background-color: #dfdfdf;
+      }
+    }
+  }
+
+  &.On {
+    border-color: #a6a6a6;
+
+    > .Head {
+      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+      background-image: url(/icon/basic/sel_1_on.svg);
+    }
+
+    > .Body {
+      border-color: #a6a6a6;
+      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+      display: block;
+    }
+  }
+}
+/**/
+.SelectBox_1 {
+  > select {
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    box-sizing: border-box;
+    /**/
+    display: flex;
+    width: 100%;
+    border-radius: 0.5em;
+    height: 36px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0px 1em;
+    color: #333;
+    border: 1px solid var(--form-border-color);
+    background-image: url(/icon/basic/sel_1.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: right 1em center;
+    background-color: white;
+
+    &:focus {
+      border-color: #a6a6a6;
+      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+    }
+
+    &.HasValue {
+      border-color: #333333;
+      background-color: white;
+    }
+
+    &.Success {
+      border-color: #4168f6;
+    }
+
+    &.Error {
+      border-color: #ff3838;
+      color: #ff3838;
+    }
+
+    &[disabled] {
+      pointer-events: none;
+      color: #a6a6a6;
+      background-color: #e1e1e1;
+      border-color: #a6a6a6;
+    }
+  }
+}
+/**/
+@mixin mixinRadioButtonPublic {
+  aspect-ratio: 1;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.RadioButton_1 {
+  @include mixinRadioButtonPublic;
+  min-width: 18px;
+
+  background-image: url(/icon/basic/rdo_1.svg);
+  &:checked {
+    background-image: url(/icon/basic/rdo_1_on.svg);
+    + .LabalUi {
+      color: #ff3838 !important;
+    }
+  }
+  &[disabled] {
+    background-image: url(/icon/basic/rdo_1_disabled.svg);
+  }
+}

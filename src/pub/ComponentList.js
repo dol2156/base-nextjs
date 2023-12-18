@@ -1,7 +1,22 @@
 
 import dynamic from 'next/dynamic';
 const ComponentList = {};
-ComponentList.bottom_sheet = [];
+ComponentList.alert = [];
+    ComponentList.alert.push({
+      경로 : '@/components/alert/Alert_1',
+      컴포넌트 : dynamic(() => import('@/components/alert/Alert_1'), { ssr : false }),
+    });
+    
+    ComponentList.alert.push({
+      경로 : '@/components/alert/Confirm_1',
+      컴포넌트 : dynamic(() => import('@/components/alert/Confirm_1'), { ssr : false }),
+    });
+    
+    ComponentList.alert.push({
+      경로 : '@/components/alert/SelectOption_1',
+      컴포넌트 : dynamic(() => import('@/components/alert/SelectOption_1'), { ssr : false }),
+    });
+    ComponentList.bottom_sheet = [];
     ComponentList.bottom_sheet.push({
       경로 : '@/components/bottom_sheet/BottomSheet_1',
       컴포넌트 : dynamic(() => import('@/components/bottom_sheet/BottomSheet_1'), { ssr : false }),

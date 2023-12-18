@@ -1,7 +1,7 @@
 'use client';
 
-import Confirm_1 from '@/app/example/alert/Confirm_1';
-import SelectOption_1 from '@/app/example/alert/SelectOption_1';
+import Confirm_1 from '@/components/alert/Confirm_1';
+import SelectOption_1 from '@/components/alert/SelectOption_1';
 import BottomSheet_1 from '@/components/bottom_sheet/BottomSheet_1';
 import BottomSheet_2 from '@/components/bottom_sheet/BottomSheet_2';
 import ToolTip_1 from '@/components/layerpop/ToolTip_1';

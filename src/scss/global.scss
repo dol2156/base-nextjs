@@ -1,14 +1,8 @@
 @use 'var';
 @use 'reset';
 @use 'font_face';
-@use 'text_input';
-@use 'select';
-@use 'dropdown';
-@use 'button';
-@use 'checkbox';
-@use 'radiobutton';
+@use 'form';
 @use 'component';
-@use 'lib';
 @import 'var_scss.scss';
 /**/
 @tailwind base;
