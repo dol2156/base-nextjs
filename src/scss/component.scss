@@ -518,9 +518,9 @@
     width: 24px;
   }
   &.Style1 {
-    background-image: url(/assets/icon/basic/toggle_1.svg);
+    background-image: url(/icon/basic/toggle_1.svg);
     &:checked {
-      background-image: url(/assets/icon/basic/toggle_1_on.svg);
+      background-image: url(/icon/basic/toggle_1_on.svg);
     }
     &[disabled] {
       opacity: 0.4;

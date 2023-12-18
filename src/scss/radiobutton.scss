@@ -11,11 +11,11 @@
   @include mixinRadioButtonPublic;
   min-width: 18px;
 
-  background-image: url(/assets/icon/basic/rdo_1.svg);
+  background-image: url(/icon/basic/rdo_1.svg);
   &:checked {
-    background-image: url(/assets/icon/basic/rdo_1_on.svg);
+    background-image: url(/icon/basic/rdo_1_on.svg);
   }
   &[disabled] {
-    background-image: url(/assets/icon/basic/rdo_1_disabled.svg);
+    background-image: url(/icon/basic/rdo_1_disabled.svg);
   }
 }

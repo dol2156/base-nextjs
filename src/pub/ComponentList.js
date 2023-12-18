@@ -11,6 +11,16 @@ ComponentList.bottom_sheet = [];
       경로 : '@/components/bottom_sheet/BottomSheet_2',
       컴포넌트 : dynamic(() => import('@/components/bottom_sheet/BottomSheet_2'), { ssr : false }),
     });
+    ComponentList.checkbox = [];
+    ComponentList.checkbox.push({
+      경로 : '@/components/checkbox/CheckboxList_1',
+      컴포넌트 : dynamic(() => import('@/components/checkbox/CheckboxList_1'), { ssr : false }),
+    });
+    
+    ComponentList.checkbox.push({
+      경로 : '@/components/checkbox/ToggleButton_1',
+      컴포넌트 : dynamic(() => import('@/components/checkbox/ToggleButton_1'), { ssr : false }),
+    });
     ComponentList.etc = [];
     ComponentList.etc.push({
       경로 : '@/components/etc/AppInfo',
