@@ -1,7 +1,17 @@
 
 import dynamic from 'next/dynamic';
 const ComponentList = {};
-ComponentList.etc = [];
+ComponentList.bottom_sheet = [];
+    ComponentList.bottom_sheet.push({
+      경로 : '@/components/bottom_sheet/BottomSheet_1',
+      컴포넌트 : dynamic(() => import('@/components/bottom_sheet/BottomSheet_1'), { ssr : false }),
+    });
+    
+    ComponentList.bottom_sheet.push({
+      경로 : '@/components/bottom_sheet/BottomSheet_2',
+      컴포넌트 : dynamic(() => import('@/components/bottom_sheet/BottomSheet_2'), { ssr : false }),
+    });
+    ComponentList.etc = [];
     ComponentList.etc.push({
       경로 : '@/components/etc/AppInfo',
       컴포넌트 : dynamic(() => import('@/components/etc/AppInfo'), { ssr : false }),
