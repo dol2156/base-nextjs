@@ -23,15 +23,25 @@ ComponentList.etc = [];
     });
     ComponentList.header = [];
     ComponentList.header.push({
-      경로 : '@/components/header/Aside_1',
-      컴포넌트 : dynamic(() => import('@/components/header/Aside_1'), { ssr : false }),
-    });
-    
-    ComponentList.header.push({
       경로 : '@/components/header/TopActionBar_1',
       컴포넌트 : dynamic(() => import('@/components/header/TopActionBar_1'), { ssr : false }),
     });
+    ComponentList.layerpop = [];
+    ComponentList.layerpop.push({
+      경로 : '@/components/layerpop/ToolTip_1',
+      컴포넌트 : dynamic(() => import('@/components/layerpop/ToolTip_1'), { ssr : false }),
+    });
     ComponentList.layout = [];
+    ComponentList.layout.push({
+      경로 : '@/components/layout/Aside_1',
+      컴포넌트 : dynamic(() => import('@/components/layout/Aside_1'), { ssr : false }),
+    });
+    
+    ComponentList.layout.push({
+      경로 : '@/components/layout/BottomRightUtil_1',
+      컴포넌트 : dynamic(() => import('@/components/layout/BottomRightUtil_1'), { ssr : false }),
+    });
+    
     ComponentList.layout.push({
       경로 : '@/components/layout/Footer_1',
       컴포넌트 : dynamic(() => import('@/components/layout/Footer_1'), { ssr : false }),

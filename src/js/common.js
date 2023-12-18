@@ -30,8 +30,43 @@ const initCssVar = () => {
   setCssVar();
 };
 
+/* 2023-11-30 :: START :: pageScroll */
+const pageScroll = {};
+
+pageScroll.Top = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+};
+
+pageScroll.Bottom = () => {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth',
+  });
+};
+/* // 2023-11-30 :: END :: pageScroll */
+
+/* 2023-10-21 :: START :: modalControl */
+const modalControl = {};
+modalControl.init = () => {
+  const $modal = document.querySelector(`#Modal`);
+};
+
+modalControl.On = () => {
+  const $modal = document.querySelector(`#Modal`);
+  $modal.classList.add(`On`);
+};
+
+modalControl.Off = () => {
+  const $modal = document.querySelector(`#Modal`);
+  $modal.classList.remove(`On`);
+};
+/* // 2023-10-21 :: END :: modalControl */
+
 const appIsReady = () => {
   const $html = document.documentElement;
   $html.classList.remove('Loading');
 };
-export { initCssVar, appIsReady };
+export { initCssVar, appIsReady, pageScroll };
