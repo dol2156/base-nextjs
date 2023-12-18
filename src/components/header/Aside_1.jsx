@@ -9,7 +9,7 @@ export default function Aside_1() {
 
   return (
     <>
-      <aside id="Aside" className="On left-[100vw] [&.On]:left-0 overflow-hidden fixed z-[110] top-0 w-full h-[--vh-100] duration-300 ease-out will-change-auto">
+      <aside id="Aside" className="left-[100vw] [&.On]:left-0 overflow-hidden fixed z-[110] top-0 w-full h-[--vh-100] duration-300 ease-out will-change-auto">
         <div className="z-0 absolute top-0 left-0 w-full h-full" />
         <div className="z-10 relative h-full">
           <article className="TopRight h-full">

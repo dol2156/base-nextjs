@@ -5,7 +5,7 @@ import TopActionBar_1 from '@/components/header/TopActionBar_1';
 export default function Header_1() {
   return (
     <>
-      <header className="Header_1-a Sticky Top">
+      <header className="Sticky Top">
         <section>
           <TopActionBar_1 />
         </section>
