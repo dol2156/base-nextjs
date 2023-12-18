@@ -1,79 +1,5 @@
 @import 'var_scss.scss';
 /**/
-.AutoCompleteBox_1 {
-  position: relative;
-  border: 1px solid #ebebeb;
-  border-radius: 8px;
-  background-color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0px;
-  /* 2023-09-05 :: START :: TEST */
-  .autoComplete_wrapper {
-    & > ul[hidden],
-    & > ul:empty {
-      /*opacity:1!important;*/
-      /*transform:none!important;*/
-    }
-  }
-  /* // 2023-09-05 :: END :: TEST */
-  .autoComplete_wrapper {
-    position: static;
-    outline: 1px dashed red;
-
-    flex: 1;
-    > input {
-      width: 100%;
-      height: 48px;
-      border: none;
-      border-radius: 0;
-      background: transparent;
-      padding: 0px !important;
-      font-size: 14px !important;
-      color: #303030 !important;
-      &::placeholder {
-        color: #a6a6a6 !important;
-        font-size: 14px !important;
-        padding: 0 !important;
-      }
-    }
-    > ul > li {
-      margin: 5px;
-      padding: 10px;
-    }
-    .no_result {
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-    .ResultCountInfo {
-      /*display:none;*/
-      text-align: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  }
-
-  button {
-    outline: 1px dashed red;
-    width: 30px;
-  }
-
-  .BtnRemoveInputValue {
-    visibility: hidden;
-  }
-
-  &.HasValue {
-    .BtnRemoveInputValue {
-      visibility: visible;
-    }
-  }
-}
-
-/**/
 .Badge_1 {
   border-radius: 14px;
   border-width: 1px;
@@ -92,33 +18,6 @@
   &.Theme_1 {
     border-color: #4168f6;
     color: #4168f6;
-  }
-}
-/**/
-.DescBox_1 {
-  width: 100%;
-  text-align: center;
-  border-radius: 8px;
-  background: #f4f4f4;
-  padding: 12px 10px;
-  font-weight: 400;
-  color: var(--text-color1);
-  font-size: 14px;
-  line-height: 20px;
-}
-/**/
-.DescBox_2 {
-  border-radius: 6px;
-  border: 1px solid var(--sub-border-2, #e1e1e1);
-  background: var(--sub-backgraound, #ffffff);
-  padding: 16px;
-
-  .Txt1 {
-    text-align: left;
-    color: #303030;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 16px;
   }
 }
 /**/
@@ -146,62 +45,6 @@
   }
 }
 /**/
-.DescList_2 {
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-
-  > li {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 0px;
-    &:before {
-      content: '\2022';
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0px;
-      margin-right: 0.3em;
-    }
-    + li {
-      margin-top: 0.2em;
-    }
-  }
-}
-/**/
-.DescList_3 {
-  --p-left: 1.5em;
-  color: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  font-weight: inherit;
-  width: calc(100% - var(--p-left));
-  //list-style: auto;
-  list-style: hangul;
-  margin-left: var(--p-left);
-  li + li {
-    margin-top: 0.5em;
-  }
-}
-/**/
-.HScrollSnapBox_1 {
-  display: inline-flex;
-  white-space: nowrap;
-  align-items: center;
-  gap: 25px;
-  overflow: auto;
-  padding-left: var(--contents-side-padding);
-  padding-right: var(--contents-side-padding);
-
-  .BannerImg {
-    > img {
-      border-radius: 10px;
-    }
-  }
-}
-/**/
 .BottomBtnBox_1 {
   width: 100%;
   background: #ffffff;
@@ -213,46 +56,6 @@
   gap: 10px;
   > * {
     flex: 1;
-  }
-
-  .C-274b091b {
-    color: #303030;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 18px;
-  }
-}
-/**/
-.CardList_1 {
-  > ul {
-    overflow: auto;
-    padding-left: var(--contents-side-padding);
-    padding-right: var(--contents-side-padding);
-    display: inline-flex;
-    white-space: nowrap;
-    gap: 10px;
-  }
-}
-/**/
-.ChipsList_1 {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding-left: var(--contents-side-padding);
-  padding-right: var(--contents-side-padding);
-  button {
-    color: #767676;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 8px 10px;
-    border-radius: 8px;
-    background-color: white;
-    border: 1px solid #e1e1e1;
-    &.On {
-      color: white;
-      border-color: #ff3838;
-      background-color: #ff3838;
-    }
   }
 }
 /**/
@@ -278,25 +81,6 @@
   }
   > * {
     animation: UpAndDown 1000ms infinite;
-  }
-}
-/**/
-.EmptyList_1 {
-  width: 100%;
-  padding-top: 90px;
-  padding-bottom: 90px;
-  text-align: center;
-  color: #767676;
-  line-height: 20px;
-
-  .Txt1 {
-    font-size: 14px;
-    font-weight: 600;
-  }
-
-  .Txt2 {
-    font-size: 12px;
-    font-weight: 400;
   }
 }
 /**/

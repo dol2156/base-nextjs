@@ -21,6 +21,41 @@ ComponentList.bottom_sheet = [];
       경로 : '@/components/checkbox/ToggleButton_1',
       컴포넌트 : dynamic(() => import('@/components/checkbox/ToggleButton_1'), { ssr : false }),
     });
+    ComponentList.common = [];
+    ComponentList.common.push({
+      경로 : '@/components/common/Badge_1',
+      컴포넌트 : dynamic(() => import('@/components/common/Badge_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/DescList_1',
+      컴포넌트 : dynamic(() => import('@/components/common/DescList_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/Divider_1',
+      컴포넌트 : dynamic(() => import('@/components/common/Divider_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/DungDung_1',
+      컴포넌트 : dynamic(() => import('@/components/common/DungDung_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/EmptyList_1',
+      컴포넌트 : dynamic(() => import('@/components/common/EmptyList_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/LinkList_1',
+      컴포넌트 : dynamic(() => import('@/components/common/LinkList_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/PagingSet_1',
+      컴포넌트 : dynamic(() => import('@/components/common/PagingSet_1'), { ssr : false }),
+    });
     ComponentList.etc = [];
     ComponentList.etc.push({
       경로 : '@/components/etc/AppInfo',
