@@ -1,7 +1,7 @@
 const initCssVar = () => {
   const setCssVar = (evt) => {
     const $html = document.documentElement;
-    
+
     // 컨텐츠 줄자
     const $ruler = document.querySelector(`#ContentsRuler`);
     if ($ruler) {
@@ -13,7 +13,7 @@ const initCssVar = () => {
         $html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
       }
     }
-    
+
     // 스크린 높이
     $html.style.setProperty('--vh-100', `${window.innerHeight}px`);
     $html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
@@ -25,6 +25,13 @@ const initCssVar = () => {
 
       $html.style.setProperty('--mouse-x', `${mouseX}px`);
       $html.style.setProperty('--mouse-y', `${mouseY}px`);
+    }
+
+    // 대쉬보드 헤더 높이
+    const $dheader = document.querySelector(`#DashBoardHeader`);
+    if ($dheader) {
+      const dheader_hei = $dheader.clientHeight;
+      $html.style.setProperty('--dashboard-header-hei', `${dheader_hei}px`);
     }
   };
 

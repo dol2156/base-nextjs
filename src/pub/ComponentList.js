@@ -1,5 +1,5 @@
-import dynamic from 'next/dynamic';
 
+import dynamic from 'next/dynamic';
 const ComponentList = {};
 ComponentList.alert = [];
     ComponentList.alert.push({
@@ -138,8 +138,18 @@ ComponentList.alert = [];
     });
     
     ComponentList.layout.push({
+      경로 : '@/components/layout/Header_2',
+      컴포넌트 : dynamic(() => import('@/components/layout/Header_2'), { ssr : false }),
+    });
+    
+    ComponentList.layout.push({
       경로 : '@/components/layout/Nav_1',
       컴포넌트 : dynamic(() => import('@/components/layout/Nav_1'), { ssr : false }),
+    });
+    
+    ComponentList.layout.push({
+      경로 : '@/components/layout/Nav_2',
+      컴포넌트 : dynamic(() => import('@/components/layout/Nav_2'), { ssr : false }),
     });
     ComponentList.meta = [];
     ComponentList.meta.push({

@@ -2,7 +2,6 @@
 
 import AppInfo from '@/components/etc/AppInfo';
 import Modal from '@/components/etc/Modal';
-import BottomRightUtil_1 from '@/components/layout/BottomRightUtil_1';
 import Head_1 from '@/components/meta/Head_1';
 import { appIsReady, initCssVar } from '@/js/common';
 import '@/scss/global.scss';
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
           <img src="/icon/loading.svg" alt="" />
         </div>
         {children}
-        <BottomRightUtil_1 />
       </body>
     </html>
   );
