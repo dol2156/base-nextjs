@@ -104,6 +104,12 @@ img[src=''] {
   text-decoration: underline;
 }
 /**/
+.TopLeft {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+/**/
 .TopBetween {
   display: flex;
   align-items: flex-start;
@@ -113,6 +119,24 @@ img[src=''] {
 .TopRight {
   display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
+}
+/**/
+.BottomLeft {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+/**/
+.BottomBetween {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+/**/
+.BottomRight {
+  display: flex;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 /**/

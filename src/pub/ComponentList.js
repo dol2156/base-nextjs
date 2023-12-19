@@ -128,6 +128,11 @@ ComponentList.alert = [];
     });
     
     ComponentList.layout.push({
+      경로 : '@/components/layout/Footer_2',
+      컴포넌트 : dynamic(() => import('@/components/layout/Footer_2'), { ssr : false }),
+    });
+    
+    ComponentList.layout.push({
       경로 : '@/components/layout/Header_1',
       컴포넌트 : dynamic(() => import('@/components/layout/Header_1'), { ssr : false }),
     });
