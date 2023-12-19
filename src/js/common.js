@@ -1,9 +1,7 @@
 const initCssVar = () => {
   const setCssVar = (evt) => {
     const $html = document.documentElement;
-    $html.style.setProperty('--vh-100', `${window.innerHeight}px`);
-    $html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
-
+    
     // 컨텐츠 줄자
     const $ruler = document.querySelector(`#ContentsRuler`);
     if ($ruler) {
@@ -15,7 +13,12 @@ const initCssVar = () => {
         $html.style.setProperty('--real-side-padding', `${real_side_padding}px`);
       }
     }
+    
+    // 스크린 높이
+    $html.style.setProperty('--vh-100', `${window.innerHeight}px`);
+    $html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
 
+    // 마우스 위치
     if (evt && evt.type == 'mousemove') {
       var mouseX = event.clientX; // 마우스의 X 좌표
       var mouseY = event.clientY; // 마우스의 Y 좌표

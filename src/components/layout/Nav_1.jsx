@@ -1,11 +1,14 @@
 'use client';
-
 import { Fragment } from 'react';
 
-export default function Page() {
+export default function Nav_1() {
   return (
     <>
-      <main className={`RR`}>
+      <nav className={`w-[314px] px-[28px] py-[20px]`}>
+        <div className={`p-[12px]`}>
+          <img src="https://gifpng.com/100x20" alt="" />
+        </div>
+        <div>열린 좌측 메뉴</div>
         <div>
           <div>START</div>
           {Array.from(Array(10)).map((obj, idx) => {
@@ -17,7 +20,7 @@ export default function Page() {
           })}
           <div>END</div>
         </div>
-      </main>
+      </nav>
     </>
   );
 }

@@ -5,10 +5,10 @@ import { Fragment } from 'react';
 export default function Footer_2() {
   return (
     <>
-      <footer className="Sticky Bottom bg-[#1C1C20] text-[#fff] text-[12px] font-[400]">
+      <footer id="DashBoardFooter" className="bg-[#1C1C20] text-[#fff] text-[12px] font-[400]">
         <section className="HBox">
           <div className="Inner py-[60px]">
-            <article class="RRR BottomBetween">
+            <article className="RRR BottomBetween">
               <div className="Fc">
                 <div>
                   <img src="https://gifpng.com/140x30" alt="" />
@@ -38,7 +38,7 @@ export default function Footer_2() {
                 <div className={`mt-[30px] text-[#fff] text-[14px] font-[400] leading-[14px]`}>© Dexterkrema Inc.</div>
               </div>
               <div className="Fc">
-                <article class="CenterRight gap-[20px]">
+                <article className="CenterRight gap-[20px]">
                   {['1:1문의', '자주 묻는 질문', '공지사항'].map((obj, idx) => {
                     return (
                       <Fragment key={idx}>
