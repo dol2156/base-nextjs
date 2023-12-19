@@ -8,17 +8,6 @@ export default function Layout({ children }) {
         <Nav_1 />
       </div>
       <div className={`Fc flex-1`}>{children}</div>
-      {/*<div className={`h-[calc(var(--vh-100)-var(--dashboard-footer-height))]`}>*/}
-      {/*  <div className={`RRR flex flex-row h-full`}>*/}
-      {/*    <div className={`Fc h-full overflow-auto`}>*/}
-      {/*      <Nav_1 />*/}
-      {/*    </div>*/}
-      {/*    <div className={`Fc h-full overflow-auto flex-1`}>{children}</div>*/}
-      {/*  </div>*/}
-      {/*</div>*/}
-      {/*<div>*/}
-      {/*  <Footer_2 />*/}
-      {/*</div>*/}
     </div>
   );
 }
