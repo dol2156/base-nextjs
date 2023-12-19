@@ -2,6 +2,7 @@
 import { Fragment } from 'react';
 
 export default function SiteMapLink({ data }) {
+  console.log(`data == `, data);
   let { D_1, D_2, D_3, D_4, LAYOUT, PAGE_KEY, CHILD, EXTERNAL_LINK } = data;
 
   const getHref = () => {
@@ -16,12 +17,11 @@ export default function SiteMapLink({ data }) {
   return (
     <li>
       <a className={`${PAGE_KEY && `PageLink`} ${EXTERNAL_LINK && `ExternalLink`}`} href={getHref()} target={`_blank`}>
-        <div className={`${PAGE_KEY && `PageKey`}`}>
-          {D_1}
-          {D_2}
-          {D_3}
-          {D_4}
-        </div>
+        {PAGE_KEY && <div className={`${PAGE_KEY && `PageKey`}`}>[{PAGE_KEY}]</div>}
+        {D_1}
+        {D_2}
+        {D_3}
+        {D_4}
       </a>
       {CHILD && (
         <ul>
