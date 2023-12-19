@@ -17,6 +17,7 @@ export default function Page() {
                   <th>Lg : 52px</th>
                   <th>Md : 48px</th>
                   <th>Sm : 40px</th>
+                  <th>On</th>
                   <th>[disabled]</th>
                 </tr>
               </thead>
@@ -25,7 +26,7 @@ export default function Page() {
                   return (
                     <Fragment key={idx}>
                       <tr>
-                        {['Xl', 'Lg', 'Md', 'Sm'].map((obj2, idx2) => {
+                        {['Xl', 'Lg', 'Md', 'Sm', 'On'].map((obj2, idx2) => {
                           return (
                             <Fragment key={idx2}>
                               <td>

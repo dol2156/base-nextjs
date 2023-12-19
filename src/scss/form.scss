@@ -274,7 +274,7 @@
   @include imgChangeAbleBtnByState;
   @include ButtonSizeVariation;
   @include ButtonThemeSet(#0d6efd, #ffffff, #0d6efd);
-  &:hover {
+  &:hover, &.On {
     @include ButtonThemeSet(#0d6efd, #0b5ed7, #ffffff);
   }
   &:disabled {
@@ -286,7 +286,7 @@
   @include imgChangeAbleBtnByState;
   @include ButtonSizeVariation;
   @include ButtonThemeSet(#dc3545, #ffffff, #dc3545);
-  &:hover {
+  &:hover, &.On {
     @include ButtonThemeSet(#dc3545, #b02a37, #ffffff);
   }
   &:disabled {
