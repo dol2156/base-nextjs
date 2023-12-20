@@ -101,8 +101,13 @@ layerControl.Off = () => {
 };
 /* // 2023-10-21 :: END :: layerControl */
 
+const getCss = (var_name) => {
+  let rootStyles = window.getComputedStyle(document.documentElement);
+  return rootStyles.getPropertyValue(var_name).trim();
+};
+
 const appIsReady = () => {
   const $html = document.documentElement;
   $html.classList.remove('Loading');
 };
-export { initCssVar, appIsReady, pageScroll, modalControl, layerControl };
+export { initCssVar, appIsReady, pageScroll, modalControl, layerControl, getCss };

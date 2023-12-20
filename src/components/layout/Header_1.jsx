@@ -6,7 +6,7 @@ export default function Header_1() {
   return (
     <>
       <header className="Sticky Top">
-        <section>
+        <section className={`[[data-scroll-header-over='true']_&]:translate-y-[-100%] duration-300 ease-out will-change-auto`}>
           <TopActionBar_1 />
         </section>
       </header>

@@ -1,4 +1,5 @@
 'use client';
+import { getCss } from '@/js/common';
 import { useEffect } from 'react';
 import UAParser from 'ua-parser-js';
 
@@ -221,6 +222,11 @@ function infoScrollTop() {
   function update() {
     const st = window.pageYOffset || document.documentElement.scrollTop;
     el_html.setAttribute('data-scroll-top', st);
+    
+    const header_hei = parseInt(getCss('--header-hei'));
+    const is_over = st > header_hei;
+    
+    el_html.setAttribute('data-scroll-header-over', is_over);
   }
 
   update();
