@@ -1,13 +1,18 @@
 'use client';
-import { getCss } from '@/js/common';
-import { useEffect } from 'react';
+import GlobalContext from '@/app/GlobalContext';
+import {getCss} from '@/js/common';
+import {Fragment, useContext, useEffect, useState} from 'react';
 import UAParser from 'ua-parser-js';
 
+// https://www.npmjs.com/package/ua-parser-js
 const up = new UAParser();
 const UA = UAParser();
 
 export default function AppInfo() {
-  // https://www.npmjs.com/package/ua-parser-js
+  const { GVar, setGVar } = useContext(GlobalContext);
+
+  const [visible_ruler, setVisibleRuler] = useState(false);
+  const [visible_gv_table, setVisibleGVTable] = useState(false);
 
   useEffect(() => {
     // mount
@@ -47,20 +52,39 @@ export default function AppInfo() {
             <div className="hei">hei</div>
           </a>
         </div>
-        <div>
-          <button
-            onClick={(evt) => {
-              const $cr = document.querySelector(`#ContentsRuler`);
-              $cr.classList.toggle('On');
-            }}
-            className="bg-[linear-gradient(45deg,_#b8cbb8_0%,_#b8cbb8_0%,_#b465da_0%,_#cf6cc9_33%,_#ee609c_66%,_#ee609c_100%)] text-white font-[800] px-[5px] rounded-[5px]"
-          >
-            Ruler
+        <div className={`CenterLeft gap-[5px]`}>
+          <button onClick={(e) => setVisibleRuler(!visible_ruler)} className="bg-[linear-gradient(45deg,_#b8cbb8_0%,_#b8cbb8_0%,_#b465da_0%,_#cf6cc9_33%,_#ee609c_66%,_#ee609c_100%)] text-white font-[800] px-[5px] rounded-[5px]">
+            Ruler {visible_ruler.toString()}
+          </button>
+          <button onClick={(e) => setVisibleGVTable(!visible_gv_table)} className="bg-[linear-gradient(175deg,rgba(34,193,195,1)_0%,rgba(253,187,45,1)_100%)] text-white font-[800] px-[5px] rounded-[5px]">
+            GVTable
           </button>
         </div>
       </div>
-      <div id="ContentsRuler" className="HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-[--mouse-y] translate-y-[-50%] left-0 bg-[#0a7feb]">
+      <div id="ContentsRuler" className={`${visible_ruler ? 'On' : ''} HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-[--mouse-y] translate-y-[-50%] left-0 bg-[#0a7feb]`}>
         <div className="RR Inner bg-[yellow]">컨텐츠 너비 줄자</div>
+      </div>
+      <div id="GlobalVarTable" className={`${visible_gv_table ? 'block' : 'hidden'} bg-[rgba(0,0,0,0.8)] p-[20px] rounded-[20px] text-[#fff] text-[14px] font-[400] z-[999] fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}>
+        <table className={`text-[#fff] text-[14px] [&_th]:border-solid [&_th]:border-[1px] [&_th]:border-[#fff] [&_th]:p-[5px] [&_td]:border-solid [&_td]:border-[1px] [&_td]:border-[#fff] [&_td]:p-[5px]`}>
+          <thead className={`font-[900]`}>
+            <tr>
+              <th>KEY</th>
+              <th>VALUE</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(GVar).map((key, idx) => {
+              return (
+                <Fragment key={idx}>
+                  <tr>
+                    <td>{key}</td>
+                    <td>{JSON.stringify(GVar[key])}</td>
+                  </tr>
+                </Fragment>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );
@@ -222,10 +246,10 @@ function infoScrollTop() {
   function update() {
     const st = window.pageYOffset || document.documentElement.scrollTop;
     el_html.setAttribute('data-scroll-top', st);
-    
+
     const header_hei = parseInt(getCss('--header-hei'));
     const is_over = st > header_hei;
-    
+
     el_html.setAttribute('data-scroll-header-over', is_over);
   }
 

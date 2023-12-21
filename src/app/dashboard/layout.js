@@ -8,16 +8,15 @@ import { useContext } from 'react';
 
 export default function Layout({ children }) {
   const { GVar, setGVar } = useContext(GlobalContext);
-  const { LEFT_OPEN } = GVar;
-  console.log(`LEFT_OPEN == `, LEFT_OPEN);
+  const { DASHBOARD_LEFT_OPEN } = GVar;
 
   return (
     <div id="PageDashboard" className={`RRR flex flex-row gap-[0] h-[--vh-100] overflow-hidden`}>
       <div className={`Fc overflow-auto`}>
-        <div className={`${!LEFT_OPEN ? 'hidden' : ''}`}>
+        <div className={`${!DASHBOARD_LEFT_OPEN ? 'hidden' : ''}`}>
           <Nav_1 />
         </div>
-        <div className={`${!LEFT_OPEN ? 'block' : 'hidden'}`}>
+        <div className={`${!DASHBOARD_LEFT_OPEN ? 'block' : 'hidden'}`}>
           <Nav_1_sm />
         </div>
       </div>

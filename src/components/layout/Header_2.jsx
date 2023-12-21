@@ -8,7 +8,7 @@ export default function Header_2() {
 
   return (
     <>
-      <header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]" onClick={(e) => setGVar('LEFT_OPEN', !GVar.LEFT_OPEN)}>
+      <header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]" onClick={(e) => setGVar('DASHBOARD_LEFT_OPEN', !GVar.DASHBOARD_LEFT_OPEN)}>
         <article className="RRR CenterBetween h-full">
           <div className={`Fc`}>
             <article className="CenterLeft">
