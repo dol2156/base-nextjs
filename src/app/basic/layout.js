@@ -1,3 +1,5 @@
+'use client';
+
 import BottomRightUtil_1 from '@/components/layout/BottomRightUtil_1';
 
 export default function Layout({ children }) {

@@ -12,9 +12,11 @@
     "ccd": "node create_component_data.js"
   },
   "dependencies": {
+    "html-react-parser": "^5.0.10",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-svg": "^16.1.32"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

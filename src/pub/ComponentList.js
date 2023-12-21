@@ -148,6 +148,11 @@ ComponentList.alert = [];
     });
     
     ComponentList.layout.push({
+      경로 : '@/components/layout/Nav_1_sm',
+      컴포넌트 : dynamic(() => import('@/components/layout/Nav_1_sm'), { ssr : false }),
+    });
+    
+    ComponentList.layout.push({
       경로 : '@/components/layout/Nav_2',
       컴포넌트 : dynamic(() => import('@/components/layout/Nav_2'), { ssr : false }),
     });

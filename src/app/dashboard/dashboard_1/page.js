@@ -1,15 +1,20 @@
 'use client';
 
+import MyContext from '@/app/MyContext';
 import Footer_2 from '@/components/layout/Footer_2';
 import Header_2 from '@/components/layout/Header_2';
 import Nav_2 from '@/components/layout/Nav_2';
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 
 export default function Page() {
+  const contextValue = useContext(MyContext);
+  console.log(`contextValue == `, contextValue);
+
   return (
     <>
       <Header_2 />
       <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
+        <div>contextValue : {contextValue}</div>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />
