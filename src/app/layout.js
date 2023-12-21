@@ -1,6 +1,7 @@
 'use client';
 
 import GlobalContext from '@/app/GlobalContext';
+import GlobalVar from '@/app/GlobalVar';
 import AppInfo from '@/components/etc/AppInfo';
 import Modal from '@/components/etc/Modal';
 import Head_1 from '@/components/meta/Head_1';
@@ -10,10 +11,7 @@ import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }) {
   // 전역 변수 사용 위해 설정
-  const [globalVar, setGlobalVar] = useState({
-    NAME: 'KSM',
-    LEFT_OPEN: true,
-  });
+  const [globalVar, setGlobalVar] = useState(GlobalVar);
 
   useEffect(() => {
     // mount

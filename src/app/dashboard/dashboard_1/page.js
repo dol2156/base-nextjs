@@ -1,20 +1,15 @@
 'use client';
 
-import GlobalContext from '@/app/GlobalContext';
 import Footer_2 from '@/components/layout/Footer_2';
 import Header_2 from '@/components/layout/Header_2';
 import Nav_2 from '@/components/layout/Nav_2';
-import { Fragment, useContext } from 'react';
+import { Fragment } from 'react';
 
 export default function Page() {
-  const { GVar, setGVar } = useContext(GlobalContext);
-  console.log(`GVar == `, GVar);
-
   return (
     <>
       <Header_2 />
       <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
-        <div>GVar.NAME : {GVar.NAME}</div>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />
