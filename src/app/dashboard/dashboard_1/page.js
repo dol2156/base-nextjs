@@ -7,14 +7,13 @@ import Nav_2 from '@/components/layout/Nav_2';
 import { Fragment, useContext } from 'react';
 
 export default function Page() {
-  const contextValue = useContext(MyContext);
-  console.log(`contextValue == `, contextValue);
+  const { data, updateData } = useContext(MyContext);
 
   return (
     <>
       <Header_2 />
       <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
-        <div>contextValue : {contextValue}</div>
+        <div>data : {data}</div>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />
