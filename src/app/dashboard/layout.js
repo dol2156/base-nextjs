@@ -1,16 +1,16 @@
 'use client';
 
-import MyContext from '@/app/MyContext';
+import GlobalContext from '@/app/GlobalContext';
 import Nav_1 from '@/components/layout/Nav_1';
 import Nav_1_sm from '@/components/layout/Nav_1_sm';
 import '@/scss/dashboard.scss';
 import { useContext } from 'react';
 
 export default function Layout({ children }) {
-  const { data, updateData } = useContext(MyContext);
+  const { GlobalState, setGlobalState } = useContext(GlobalContext);
 
   setTimeout(() => {
-    updateData('KSM');
+    setGlobalState('KSM');
   }, 3000);
 
   return (
