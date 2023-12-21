@@ -8,12 +8,13 @@ import { Fragment, useContext } from 'react';
 
 export default function Page() {
   const { GlobalState, setGlobalState } = useContext(GlobalContext);
+  console.log(`GlobalState == `, GlobalState);
 
   return (
     <>
       <Header_2 />
       <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
-        <div>GlobalState : {GlobalState}</div>
+        <div>GlobalState.NAME : {GlobalState.NAME}</div>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />

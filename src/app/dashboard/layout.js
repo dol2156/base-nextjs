@@ -8,9 +8,10 @@ import { useContext } from 'react';
 
 export default function Layout({ children }) {
   const { GlobalState, setGlobalState } = useContext(GlobalContext);
+  console.log(`GlobalState == `, GlobalState);
 
   setTimeout(() => {
-    setGlobalState('KSM');
+    setGlobalState({ NAME: '강석민' });
   }, 3000);
 
   return (

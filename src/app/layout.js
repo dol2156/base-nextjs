@@ -9,7 +9,7 @@ import '@/scss/global.scss';
 import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }) {
-  const [value, setValue] = useState('Hello, Context!');
+  const [value, setValue] = useState({ NAME: 'KSM' });
 
   // Context value에 상태 업데이트 함수도 포함시켜서 전달합니다.
   const contextValue = {
