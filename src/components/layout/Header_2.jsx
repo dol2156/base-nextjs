@@ -5,9 +5,9 @@ import { Fragment } from 'react';
 export default function Header_2() {
   return (
     <>
-      {/*<header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]" onClick={(e) => GlobalState.setVal('대시보드_좌측네비_열림', false)}>*/}
+      {/*<header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]" onClick={(e) => GVar.setVal('대시보드_좌측네비_열림', false)}>*/}
       <header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]">
-        {/*<div>{GlobalState.getVal('대시보드_좌측네비_열림').toString()}</div>*/}
+        {/*<div>{GVar.getVal('대시보드_좌측네비_열림').toString()}</div>*/}
         <article className="RRR CenterBetween h-full">
           <div className={`Fc`}>
             <article className="CenterLeft">

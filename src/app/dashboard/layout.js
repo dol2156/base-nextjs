@@ -7,11 +7,10 @@ import '@/scss/dashboard.scss';
 import { useContext } from 'react';
 
 export default function Layout({ children }) {
-  const { GlobalState, setGlobalState } = useContext(GlobalContext);
-  console.log(`GlobalState == `, GlobalState);
+  const { GVar, setGVar } = useContext(GlobalContext);
 
   setTimeout(() => {
-    setGlobalState({ NAME: '강석민' });
+    setGVar('NAME', '강석민');
   }, 3000);
 
   return (

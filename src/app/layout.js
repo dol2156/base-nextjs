@@ -9,13 +9,8 @@ import '@/scss/global.scss';
 import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }) {
-  const [value, setValue] = useState({ NAME: 'KSM' });
-
-  // Context value에 상태 업데이트 함수도 포함시켜서 전달합니다.
-  const contextValue = {
-    GlobalState: value,
-    setGlobalState: setValue,
-  };
+  // 전역 변수 사용 위해 설정
+  const [globalVar, setGlobalVar] = useState({ NAME: 'KSM' });
 
   useEffect(() => {
     // mount
@@ -28,7 +23,16 @@ export default function RootLayout({ children }) {
     <html className={`Loading`}>
       <Head_1 />
       <body>
-        <GlobalContext.Provider value={contextValue}>
+        <GlobalContext.Provider
+          value={{
+            GVar: globalVar,
+            setGVar: (set_key, set_value) => {
+              const ori = { ...globalVar };
+              ori[set_key] = set_value;
+              setGlobalVar(ori);
+            },
+          }}
+        >
           <AppInfo />
           <Modal />
           <div id="LoadingSpinner" className="hidden [&.On]:block z-[150] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px]">

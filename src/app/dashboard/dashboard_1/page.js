@@ -7,14 +7,14 @@ import Nav_2 from '@/components/layout/Nav_2';
 import { Fragment, useContext } from 'react';
 
 export default function Page() {
-  const { GlobalState, setGlobalState } = useContext(GlobalContext);
-  console.log(`GlobalState == `, GlobalState);
+  const { GVar, setGVar } = useContext(GlobalContext);
+  console.log(`GVar == `, GVar);
 
   return (
     <>
       <Header_2 />
       <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
-        <div>GlobalState.NAME : {GlobalState.NAME}</div>
+        <div>GVar.NAME : {GVar.NAME}</div>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />
