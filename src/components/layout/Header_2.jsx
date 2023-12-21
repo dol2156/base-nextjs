@@ -1,8 +1,24 @@
 'use client';
 
-import { Fragment } from 'react';
+import GlobalContext from '@/app/GlobalContext';
+import { Fragment, useContext, useEffect } from 'react';
 
 export default function Header_2() {
+  const { GVar, setGVar } = useContext(GlobalContext);
+  console.log(`GVar.LEFT_OPEN == `, GVar.LEFT_OPEN);
+
+  useEffect(() => {
+    // mount
+    console.log('Header_2.jsx mount');
+    setTimeout(() => {
+      setGVar('LEFT_OPEN', false);
+    }, 3000);
+    return () => {
+      // unmount
+      console.log('Header_2.jsx unmount');
+    };
+  }, []);
+
   return (
     <>
       {/*<header id="DashBoardHeader" className="Sticky Top h-[72px] px-[36px]" onClick={(e) => GVar.setVal('대시보드_좌측네비_열림', false)}>*/}

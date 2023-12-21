@@ -10,7 +10,10 @@ import { useEffect, useState } from 'react';
 
 export default function RootLayout({ children }) {
   // 전역 변수 사용 위해 설정
-  const [globalVar, setGlobalVar] = useState({ NAME: 'KSM' });
+  const [globalVar, setGlobalVar] = useState({
+    NAME: 'KSM',
+    LEFT_OPEN: true,
+  });
 
   useEffect(() => {
     // mount

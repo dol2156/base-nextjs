@@ -9,10 +9,6 @@ import { useContext } from 'react';
 export default function Layout({ children }) {
   const { GVar, setGVar } = useContext(GlobalContext);
 
-  setTimeout(() => {
-    setGVar('NAME', '강석민');
-  }, 3000);
-
   return (
     <div id="PageDashboard" className={`RRR flex flex-row gap-[0] h-[--vh-100] overflow-hidden`}>
       <div className={`Fc overflow-auto`}>
@@ -23,7 +19,10 @@ export default function Layout({ children }) {
           <Nav_1_sm />
         </div>
       </div>
-      <div className={`Fc flex-1`}>{children}</div>
+      <div className={`Fc flex-1`}>
+        <div>GVar.LEFT_OPEN : {GVar.LEFT_OPEN.toString()}</div>
+        {children}
+      </div>
     </div>
   );
 }
