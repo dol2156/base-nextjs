@@ -2,7 +2,6 @@
 import { Fragment } from 'react';
 
 export default function SiteMapLink({ data }) {
-  console.log(`data == `, data);
   let { D_1, D_2, D_3, D_4, LAYOUT, PAGE_KEY, CHILD, EXTERNAL_LINK } = data;
 
   const getHref = () => {

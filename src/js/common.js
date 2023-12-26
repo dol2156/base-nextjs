@@ -33,6 +33,13 @@ const initCssVar = () => {
       const dheader_hei = $dheader.clientHeight;
       $html.style.setProperty('--dashboard-header-hei', `${dheader_hei}px`);
     }
+
+    // 브라우저마다 다른 스크롤 굵기
+    const $swb = document.querySelector(`#ScrollWidBox`);
+    const $swb_child = $swb.querySelector(`:scope > div`);
+    const k = $swb.offsetWidth - $swb_child.offsetWidth;
+
+    $html.style.setProperty('--scroll-wid', `${k}px`);
   };
 
   document.addEventListener('mousemove', setCssVar);

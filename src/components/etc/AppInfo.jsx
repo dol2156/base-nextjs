@@ -29,6 +29,9 @@ export default function AppInfo() {
 
   return (
     <>
+      <div id={`ScrollWidBox`} className={`RR z-[9999] fixed top-[-100%] left-[-100%] overflow-y-scroll`}>
+        <div>ScrollWidBox</div>
+      </div>
       <div id="AppInfo" className="hidden [[data-scroll-top='0']_&]:flex z-[9999] fixed top-[0] left-1/2 -translate-x-1/2 bg-[rgba(0,0,0,.7)] p-[5px] text-[yellow] text-[12px] font-[400] whitespace-nowrap flex-row items-center justify-center gap-[10px]">
         <div>
           <a href="/" className="flex flex-row items-center justify-center gap-[5px]">
