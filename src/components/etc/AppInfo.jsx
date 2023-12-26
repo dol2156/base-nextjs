@@ -64,8 +64,8 @@ export default function AppInfo() {
           </button>
         </div>
       </div>
-      <div id="ContentsRuler" className={`${visible_ruler ? 'On' : ''} HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-1/2 translate-y-[-50%] left-0 bg-[#0a7feb]`}>
-        <div className="RR Inner bg-[yellow]">컨텐츠 너비 줄자</div>
+      <div id="ContentsRuler" className={`${visible_ruler ? 'On' : ''} HBox opacity-0 [&.On]:opacity-100 pointer-events-none z-[999999] fixed w-full h-full text-[20px] font-bold text-center top-0 left-0 bg-[rgba(10,127,235,0.5)]`}>
+        <div className="RR Inner bg-[rgba(255,255,0,0.5)] h-full flex flex-row items-center justify-center gap-[0]">컨텐츠 너비 줄자</div>
       </div>
       <div id="GlobalVarTable" className={`${visible_gv_table ? 'block' : 'hidden'} bg-[rgba(0,0,0,0.8)] p-[20px] rounded-[20px] text-[#fff] text-[14px] font-[400] z-[999] fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}>
         <table className={`text-[#fff] text-[14px] [&_th]:border-solid [&_th]:border-[1px] [&_th]:border-[#fff] [&_th]:p-[5px] [&_td]:border-solid [&_td]:border-[1px] [&_td]:border-[#fff] [&_td]:p-[5px]`}>
