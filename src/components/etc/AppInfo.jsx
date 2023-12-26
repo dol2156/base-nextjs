@@ -64,7 +64,7 @@ export default function AppInfo() {
           </button>
         </div>
       </div>
-      <div id="ContentsRuler" className={`${visible_ruler ? 'On' : ''} HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-[--mouse-y] translate-y-[-50%] left-0 bg-[#0a7feb]`}>
+      <div id="ContentsRuler" className={`${visible_ruler ? 'On' : ''} HBox opacity-0 [&.On]:opacity-50 pointer-events-none z-[999999] fixed w-full text-[16px] text-center top-1/2 translate-y-[-50%] left-0 bg-[#0a7feb]`}>
         <div className="RR Inner bg-[yellow]">컨텐츠 너비 줄자</div>
       </div>
       <div id="GlobalVarTable" className={`${visible_gv_table ? 'block' : 'hidden'} bg-[rgba(0,0,0,0.8)] p-[20px] rounded-[20px] text-[#fff] text-[14px] font-[400] z-[999] fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2`}>

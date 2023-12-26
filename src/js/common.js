@@ -18,15 +18,6 @@ const initCssVar = () => {
     $html.style.setProperty('--vh-100', `${window.innerHeight}px`);
     $html.style.setProperty('--vh-50', `${window.innerHeight / 2}px`);
 
-    // 마우스 위치
-    if (evt && evt.type == 'mousemove') {
-      var mouseX = event.clientX; // 마우스의 X 좌표
-      var mouseY = event.clientY; // 마우스의 Y 좌표
-
-      $html.style.setProperty('--mouse-x', `${mouseX}px`);
-      $html.style.setProperty('--mouse-y', `${mouseY}px`);
-    }
-
     // 대쉬보드 헤더 높이
     const $dheader = document.querySelector(`#DashBoardHeader`);
     if ($dheader) {
