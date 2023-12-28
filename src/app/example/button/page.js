@@ -1,79 +1,71 @@
 'use client';
 
 import { Fragment } from 'react';
+import { ReactSVG } from 'react-svg';
 
 export default function Page() {
   return (
     <>
       <main>
         <h1 className="H1 Sticky Top">Button</h1>
+        <section className={`HBox`}>
+          <div className="Inner">
+            <h2 className={`H2`}>Style</h2>
+            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
+              {[...Array(20).keys()].map((obj, idx) => {
+                return (
+                  <Fragment key={idx}>
+                    <div>
+                      <button className={`Button_${idx + 1} w-full`}>Button_{idx + 1}</button>
+                    </div>
+                  </Fragment>
+                );
+              })}
+            </article>
+          </div>
+        </section>
         <section className="HBox mt-[50px]">
           <div className="Inner">
-            <h2 className="H2">Button List</h2>
-            <table className="BtnSampleTable">
-              <thead>
-                <tr>
-                  <th>Xl : 60px</th>
-                  <th>Lg : 52px</th>
-                  <th>Md : 48px</th>
-                  <th>Sm : 40px</th>
-                  <th>On</th>
-                  <th>[disabled]</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.from(Array(10)).map((obj, idx) => {
-                  return (
-                    <Fragment key={idx}>
-                      <tr>
-                        {['Xl', 'Lg', 'Md', 'Sm', 'On'].map((obj2, idx2) => {
-                          return (
-                            <Fragment key={idx2}>
-                              <td>
-                                <button className={`Button_${idx + 1} w-full ${obj2}`}>
-                                  Button_{idx + 1} {obj2}
-                                </button>
-                              </td>
-                            </Fragment>
-                          );
-                        })}
-                        <td>
-                          <button className={`Button_${idx + 1} w-full`} disabled={true}>
-                            Button
-                          </button>
-                        </td>
-                      </tr>
-                    </Fragment>
-                  );
-                })}
-              </tbody>
-            </table>
+            <h2 className="H2">Size</h2>
+            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
+              {['Xl', 'Lg', 'Md', 'Sm'].map((obj, idx) => {
+                return (
+                  <Fragment key={idx}>
+                    <div>
+                      <button className={`Button_1 ${obj} w-full`}>Button_1.{obj}</button>
+                    </div>
+                  </Fragment>
+                );
+              })}
+            </article>
           </div>
         </section>
         <section className="HBox">
           <div className="Inner">
-            <h2 className="H2">ETC Buttons</h2>
+            <h2 className="H2">ETC</h2>
             <br />
-            <h3 className="H3">Btn_0</h3>
-            <article className="CenterLeft gap-[10px]">
-              <button className="Btn_0">
-                <div>인기순</div>
-                <div className="[button:hover>&]:text-[red]">
-                  <img src="/icon/star.svg" alt="" />
-                </div>
-              </button>
-              <button className="Btn_0">
-                랭킹기준
-                <img className="Default Hover" src="/icon/warn.svg" alt="" />
-                <img className="Active" src="/icon/wran_active.svg" alt="" />
-              </button>
-              <button className="Btn_0">
-                랭킹기준
-                <img className="Default" src="/icon/warn.svg" alt="" />
-                <img className="Hover" src="/icon/warn_hover.svg" alt="" />
-                <img className="Active" src="/icon/wran_active.svg" alt="" />
-              </button>
-            </article>
+            <ul className={`p-[10px] space-y-[30px]`}>
+              <li>
+                <h3 className="H3">Btn_0</h3>
+                <article className="CenterLeft gap-[10px]">
+                  <button className="Btn_0 group">
+                    Btn_0
+                    <img className={`group-hover:hidden`} src="/icon/warn.svg" alt="" />
+                    <img className={`hidden group-hover:block group-active:hidden`} src="/icon/warn_hover.svg" alt="" />
+                    <img className={`hidden group-active:block`} src="/icon/wran_active.svg" alt="" />
+                  </button>
+                </article>
+              </li>
+              <li>
+                <h3 className="H3">Btn_1</h3>
+                <article className="CenterLeft gap-[10px]">
+                  <button className="Btn_1 group">
+                    Btn_1
+                    <ReactSVG className={`group-hover:text-[yellow] group-active:text-[lime]`} src={`/icon/warn.svg`} />
+                  </button>
+                </article>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
