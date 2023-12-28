@@ -183,11 +183,6 @@ ComponentList.alert = [];
     });
     
     ComponentList.textinput.push({
-      경로 : '@/components/textinput/TextInput_1',
-      컴포넌트 : dynamic(() => import('@/components/textinput/TextInput_1'), { ssr : false }),
-    });
-    
-    ComponentList.textinput.push({
       경로 : '@/components/textinput/Textarea_1',
       컴포넌트 : dynamic(() => import('@/components/textinput/Textarea_1'), { ssr : false }),
     });

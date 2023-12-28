@@ -1,158 +1,5 @@
 @import 'var_scss.scss';
-/**/
-.FormMsg {
-  margin-top: 12px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 14px;
-  &.Type1 {
-    color: #9af;
-  }
-  &.Type2 {
-    color: #f3436d;
-  }
-}
-/**/
-.FormLabel_1 {
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
-}
 
-/**/
-.TextInput_1 {
-  /*fixed*/
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  outline: none;
-
-  /*dynamic*/
-  height: 40px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-
-  &.Sm {
-    height: 32px;
-  }
-
-  &.Lg {
-    height: 44px;
-  }
-
-  &.Xl {
-    height: 52px;
-  }
-
-  /* $PcMinWid 이상 화면*/
-  @media screen and (min-width: $PcMinWid) {
-    /*dynamic*/
-    height: 48px;
-
-    &.Sm {
-      height: 40px;
-    }
-
-    &.Lg {
-      height: 52px;
-    }
-
-    &.Xl {
-      height: 60px;
-    }
-  }
-
-  background-color: white;
-  border: 1px solid var(--form-border-color);
-  padding: 0 1em;
-
-  > input {
-    display: block;
-    outline: none;
-    border: none;
-    flex-grow: 1;
-    width: 0;
-    height: 100%;
-    background-color: transparent;
-    &::placeholder {
-      color: var(--form-placeholder-color);
-    }
-  }
-
-  > button {
-    font-size: inherit;
-    aspect-ratio: 9/16;
-    min-width: 24px;
-    height: 100%;
-    > img {
-      margin-left: auto;
-      margin-right: auto;
-      //width: 90%;
-    }
-  }
-
-  .ResetBtn {
-    visibility: hidden;
-  }
-
-  &.HasValue {
-    .ResetBtn {
-      visibility: visible;
-    }
-  }
-
-  &.HasValue {
-    border-color: #333333;
-    background-color: white;
-  }
-
-  &.Focus,
-  &:focus {
-    border-color: #a6a6a6;
-    background: #ffffff;
-    box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
-  }
-  &.Error {
-    border-color: #ff3838;
-    > input {
-      color: #ff3838;
-    }
-  }
-  &.Success {
-    border-color: #4168f6;
-  }
-  &.ReadOnly {
-    color: #a6a6a6;
-    background-color: #e1e1e1;
-    border-color: #a6a6a6;
-  }
-}
-/**/
-.Textarea_1 {
-  width: 100%;
-  resize: vertical;
-  outline: none;
-  padding: 1em;
-  border: none;
-  border-radius: 0.5em;
-  color: #303030;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.4em;
-  border: 1px solid var(--form-border-color);
-  background-color: white;
-
-  &::placeholder {
-    color: var(--form-placeholder-color);
-  }
-
-  &.Error {
-    border-color: #ff3838;
-  }
-}
 /**/
 @mixin ButtonSizeVariation {
   /*fixed*/
@@ -229,6 +76,150 @@
   background-color: $bg;
   color: $color;
 }
+
+@mixin FormHeight {
+  height: 40px;
+  &.Sm {
+    height: 32px;
+  }
+
+  &.Lg {
+    height: 44px;
+  }
+
+  &.Xl {
+    height: 52px;
+  }
+
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    height: 48px;
+
+    &.Sm {
+      height: 40px;
+    }
+
+    &.Lg {
+      height: 52px;
+    }
+
+    &.Xl {
+      height: 60px;
+    }
+  }
+}
+
+/**/
+@mixin CheckBoxPublic {
+  aspect-ratio: 1;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@mixin ChkSizeVariation {
+  width: 18px;
+  &.Sm {
+    width: 12px;
+  }
+  &.Lg {
+    width: 24px;
+  }
+  &.Xl {
+    width: 30px;
+  }
+  /* $PcMinWid 이상 화면*/
+  @media screen and (min-width: $PcMinWid) {
+    width: 24px;
+    &.Sm {
+      width: 18px;
+    }
+    &.Lg {
+      width: 30px;
+    }
+    &.Xl {
+      width: 36px;
+    }
+  }
+}
+
+/**/
+@mixin RadioButtonPublic {
+  aspect-ratio: 1;
+  appearance: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/**/
+.FormMsg {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  &.Type1 {
+    color: #9af;
+  }
+  &.Type2 {
+    color: #f3436d;
+  }
+}
+/**/
+.FormLabel_1 {
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+/**/
+.TextInput_1 {
+  @include FormHeight;
+  @apply relative flex items-center gap-[5px];
+  @apply rounded-[10px] text-[#161616] text-[14px] font-[500] border-solid border-[1px] border-[#e1e1e1] px-[10px] bg-white;
+  /* HasValue */
+  @apply has-[input:not(:placeholder-shown)]:border-[#26262c];
+  /* Focus */
+  @apply has-[input:focus]:text-[#5D45FF] has-[input:focus]:border-[#5D45FF] has-[input:focus]:shadow-[0px_0px_6px_0px_rgba(93,69,255,0.6)];
+  /* Readonly */
+  @apply has-[input:read-only]:border-[#A3A1B1] has-[input:read-only]:bg-[#CFCEDC] has-[input:read-only]:pointer-events-none has-[input:read-only]:text-[#A3A1B1];
+
+  > input {
+    @apply block outline-0 border-0 flex-1 bg-transparent w-0;
+
+    @apply placeholder-[#a6a6a6];
+  }
+
+  &.Success {
+    border-color: #4168f6 !important;
+    color: #4168f6 !important;
+  }
+}
+/**/
+.Textarea_1 {
+  width: 100%;
+  resize: vertical;
+  outline: none;
+  padding: 1em;
+  border: none;
+  border-radius: 0.5em;
+  color: #303030;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4em;
+  border: 1px solid var(--form-border-color);
+  background-color: white;
+
+  &::placeholder {
+    color: var(--form-placeholder-color);
+  }
+
+  &.Error {
+    border-color: #ff3838;
+  }
+}
+
 /**/
 .Button_1 {
   @include ButtonSizeVariation;
@@ -272,7 +263,7 @@
   &:hover {
     @include ButtonThemeSet(#0b5ed7, #0b5ed7, #fff);
   }
-  
+
   &:active {
     @include ButtonThemeSet(#0a58ca, #0a58ca, #fff);
   }
@@ -301,42 +292,9 @@
   }
 }
 /**/
-@mixin mixinCheckBoxPublic {
-  aspect-ratio: 1;
-  appearance: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-@mixin chkSizeVariation {
-  width: 18px;
-  &.Sm {
-    width: 12px;
-  }
-  &.Lg {
-    width: 24px;
-  }
-  &.Xl {
-    width: 30px;
-  }
-  /* $PcMinWid 이상 화면*/
-  @media screen and (min-width: $PcMinWid) {
-    width: 24px;
-    &.Sm {
-      width: 18px;
-    }
-    &.Lg {
-      width: 30px;
-    }
-    &.Xl {
-      width: 36px;
-    }
-  }
-}
-/**/
 .Checkbox_1 {
-  @include mixinCheckBoxPublic;
-  @include chkSizeVariation;
+  @include CheckBoxPublic;
+  @include ChkSizeVariation;
   background-image: url(/icon/basic/chk_1.svg);
   &:checked {
     background-image: url(/icon/basic/chk_1_on.svg);
@@ -501,17 +459,9 @@
     }
   }
 }
-/**/
-@mixin mixinRadioButtonPublic {
-  aspect-ratio: 1;
-  appearance: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
 
 .RadioButton_1 {
-  @include mixinRadioButtonPublic;
+  @include RadioButtonPublic;
   min-width: 18px;
 
   background-image: url(/icon/basic/rdo_1.svg);
