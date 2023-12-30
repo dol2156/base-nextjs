@@ -11,13 +11,24 @@ export default function Page() {
         <h1 className="H1 Sticky Top">Textinput</h1>
         <section className={`HBox`}>
           <div className="Inner">
-            <h2 className={`H2`}>Style</h2>
+            <h2 className={`H2`}>Style & State</h2>
             <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] items-center justify-center gap-[10px]`}>
               {[...Array(20).keys()].map((obj, idx) => {
                 return (
                   <Fragment key={idx}>
-                    <div className={`TextInput_${idx + 1} w-full`}>
-                      <input placeholder={`TextInput_${idx + 1}`} />
+                    <div className={`outline-dashed outline-[red] outline-[1px] p-[5px] space-y-[5px]`}>
+                      <div className={`TextInput_${idx + 1} w-full`}>
+                        <input placeholder={`TextInput_${idx + 1}`} />
+                      </div>
+                      <div className={`TextInput_${idx + 1} w-full`}>
+                        <input placeholder="placeholder" defaultValue={`HasValue`} />
+                      </div>
+                      <div className={`TextInput_${idx + 1} w-full Success`}>
+                        <input placeholder=".Success" />
+                      </div>
+                      <div className={`TextInput_${idx + 1} w-full`}>
+                        <input placeholder="[readonly]" readOnly={true} />
+                      </div>
                     </div>
                   </Fragment>
                 );
@@ -28,12 +39,12 @@ export default function Page() {
         <section className="HBox mt-[50px]">
           <div className="Inner">
             <h2 className="H2">Size</h2>
-            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
+            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] items-center justify-center gap-[10px]`}>
               {['Xl', 'Lg', 'Md', 'Sm'].map((obj, idx) => {
                 return (
                   <Fragment key={idx}>
                     <div className={`TextInput_1 ${obj} w-full`}>
-                      <input placeholder="placeholder" placeholder={`TextInput_1.${obj}`} />
+                      <input placeholder={`TextInput_1.${obj}`} />
                       <button>
                         <img className={`w-[24px]`} src="/icon/input_delete.svg" alt="" />
                       </button>
@@ -44,22 +55,6 @@ export default function Page() {
                   </Fragment>
                 );
               })}
-            </article>
-          </div>
-        </section>
-        <section className="HBox mt-[50px]">
-          <div className="Inner">
-            <h2 className="H2">State</h2>
-            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
-              <div className={`TextInput_1 w-full`}>
-                <input placeholder="placeholder" value={`HasValue`} />
-              </div>
-              <div className={`TextInput_1 w-full Success`}>
-                <input placeholder="placeholder" value={`Success`} />
-              </div>
-              <div className={`TextInput_1 w-full`}>
-                <input placeholder="placeholder" value={`readonly`} readOnly={true} />
-              </div>
             </article>
           </div>
         </section>

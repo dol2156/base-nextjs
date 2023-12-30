@@ -10,13 +10,17 @@ export default function Page() {
         <h1 className="H1 Sticky Top">Button</h1>
         <section className={`HBox`}>
           <div className="Inner">
-            <h2 className={`H2`}>Style</h2>
+            <h2 className={`H2`}>Style & State</h2>
             <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
               {[...Array(20).keys()].map((obj, idx) => {
                 return (
                   <Fragment key={idx}>
-                    <div>
-                      <button className={`Button_${idx + 1} w-full`}>Button_{idx + 1}</button>
+                    <div className={`outline-dashed outline-[red] outline-[1px] p-[5px] space-y-[5px]`}>
+                      <button className={`Button_${idx + 1} w-full`}>.Button_{idx + 1}</button>
+                      <button className={`Button_${idx + 1} w-full On`}>.On</button>
+                      <button className={`Button_${idx + 1} w-full`} disabled={true}>
+                        [disabled]
+                      </button>
                     </div>
                   </Fragment>
                 );
