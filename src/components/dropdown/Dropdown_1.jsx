@@ -6,7 +6,7 @@ export default function Dropdown_1() {
     <>
       <div className="SampleList">
         <div>
-          <label className="FormLabel_1">Basic</label>
+          <label className="text-[#161616] text-[20px] font-[600]">Basic</label>
           <div className="Dropdown_1">
             <input type="hidden" />
             <div className="Head">선택</div>
@@ -18,7 +18,7 @@ export default function Dropdown_1() {
           </div>
         </div>
         <div>
-          <label className="FormLabel_1">.Selected</label>
+          <label className="text-[#161616] text-[20px] font-[600]">.Selected</label>
           <div className="Dropdown_1 On">
             <input type="hidden" />
             <div className="Head">선택</div>
@@ -41,7 +41,7 @@ export default function Dropdown_1() {
         <br />
         <br />
         <div>
-          <label className="FormLabel_1">.Top</label>
+          <label className="text-[#161616] text-[20px] font-[600]">.Top</label>
           <br />
           <br />
           <br />

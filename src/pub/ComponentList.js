@@ -161,11 +161,6 @@ ComponentList.alert = [];
       경로 : '@/components/meta/Head_1',
       컴포넌트 : dynamic(() => import('@/components/meta/Head_1'), { ssr : false }),
     });
-    ComponentList.radiobutton = [];
-    ComponentList.radiobutton.push({
-      경로 : '@/components/radiobutton/RadioButtonList_1',
-      컴포넌트 : dynamic(() => import('@/components/radiobutton/RadioButtonList_1'), { ssr : false }),
-    });
     ComponentList.textinput = [];
     ComponentList.textinput.push({
       경로 : '@/components/textinput/FormMsg',

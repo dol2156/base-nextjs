@@ -99,16 +99,14 @@
     }
   }
 }
-
 /**/
-@mixin CheckBoxPublic {
+@mixin FromBtnSizeVariation {
   aspect-ratio: 1;
   appearance: none;
   cursor: pointer;
   background-repeat: no-repeat;
   background-size: contain;
-}
-@mixin ChkSizeVariation {
+  
   width: 18px;
   &.Sm {
     width: 12px;
@@ -133,16 +131,6 @@
     }
   }
 }
-
-/**/
-@mixin RadioButtonPublic {
-  aspect-ratio: 1;
-  appearance: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
 /**/
 .FormMsg {
   margin-top: 12px;
@@ -155,13 +143,6 @@
   &.Type2 {
     color: #f3436d;
   }
-}
-/**/
-.FormLabel_1 {
-  cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  color: #333;
 }
 
 /**/
@@ -293,8 +274,7 @@
 }
 /**/
 .Checkbox_1 {
-  @include CheckBoxPublic;
-  @include ChkSizeVariation;
+  @include FromBtnSizeVariation;
   background-image: url(/icon/basic/chk_1.svg);
   &:checked {
     background-image: url(/icon/basic/chk_1_on.svg);
@@ -304,6 +284,25 @@
   }
   &[disabled] {
     background-image: url(/icon/basic/chk_1_disabled.svg);
+    + * {
+      color: #ddd;
+    }
+  }
+}
+/**/
+.RadioButton_1 {
+  @include FromBtnSizeVariation;
+  min-width: 18px;
+
+  background-image: url(/icon/basic/rdo_1.svg);
+  &:checked {
+    background-image: url(/icon/basic/rdo_1_on.svg);
+    + * {
+      color: #ff3838 !important;
+    }
+  }
+  &[disabled] {
+    background-image: url(/icon/basic/rdo_1_disabled.svg);
     + * {
       color: #ddd;
     }
@@ -495,21 +494,5 @@
 
   &.Success {
     border-color: #4168f6;
-  }
-}
-
-.RadioButton_1 {
-  @include RadioButtonPublic;
-  min-width: 18px;
-
-  background-image: url(/icon/basic/rdo_1.svg);
-  &:checked {
-    background-image: url(/icon/basic/rdo_1_on.svg);
-    + .LabelUi {
-      color: #ff3838 !important;
-    }
-  }
-  &[disabled] {
-    background-image: url(/icon/basic/rdo_1_disabled.svg);
   }
 }

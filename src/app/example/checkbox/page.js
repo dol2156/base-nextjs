@@ -15,7 +15,7 @@ export default function Page() {
               {[...Array(20).keys()].map((obj, idx) => {
                 return (
                   <Fragment key={idx}>
-                    <div className={`RRR outline-dashed outline-[red] outline-[1px] p-[5px] space-y-[5px] bg-white text-[0]`}>
+                    <div className={`outline-dashed outline-[red] outline-[1px] p-[5px] space-y-[5px] bg-white text-[0]`}>
                       <div>
                         <input className={`Checkbox_${idx + 1}`} type="checkbox" />
                       </div>
