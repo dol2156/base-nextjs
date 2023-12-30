@@ -208,11 +208,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.4em;
-  border: 1px solid var(--form-border-color);
+  border: 1px solid #e1e1e1;
   background-color: white;
 
   &::placeholder {
-    color: var(--form-placeholder-color);
+    color: #a6a6a6;
   }
 
   &.Error {
@@ -333,7 +333,7 @@
   cursor: pointer;
   position: relative;
   width: 100%;
-  border: 1px solid var(--form-border-color);
+  border: 1px solid #e1e1e1;
   border-radius: 0.5em;
   font-size: 12px;
   font-weight: 400;
@@ -370,7 +370,7 @@
     overflow: auto;
     background-color: white;
     /**/
-    border: 1px solid var(--form-border-color);
+    border: 1px solid #e1e1e1;
     box-sizing: content-box;
     display: none;
 
@@ -410,53 +410,88 @@
 }
 /**/
 .SelectBox_1 {
-  > select {
-    appearance: none;
-    outline: none;
-    cursor: pointer;
-    background-color: transparent;
-    box-sizing: border-box;
-    /**/
-    display: flex;
-    width: 100%;
-    border-radius: 0.5em;
-    height: 36px;
-    font-size: 12px;
-    font-weight: 400;
-    padding: 0px 1em;
-    color: #333;
-    border: 1px solid var(--form-border-color);
-    background-image: url(/icon/basic/sel_1.svg);
-    background-size: 18px;
-    background-repeat: no-repeat;
-    background-position: right 1em center;
-    background-color: white;
+  @include FormHeight;
+  
+  &:has(option[value='']:checked) {
+    color: #a3a1b1;
+  }
+  
+  &[disabled] {
+    pointer-events: none;
+    color: #a6a6a6;
+    background-color: #e1e1e1;
+    border-color: #a6a6a6;
+  }
 
-    &:focus {
-      border-color: #a6a6a6;
-      box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
-    }
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  box-sizing: border-box;
+  /**/
+  display: flex;
+  width: 100%;
+  border-radius: 0.5em;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0px 1em;
+  color: #333;
+  border: 1px solid #e1e1e1;
+  background-image: url(/icon/basic/sel_1.svg);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: right 1em center;
+  background-color: white;
 
-    &.HasValue {
-      border-color: #333333;
-      background-color: white;
-    }
+  &:focus {
+    border-color: #a6a6a6;
+    box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+  }
 
-    &.Success {
-      border-color: #4168f6;
-    }
+  &.Success {
+    border-color: #4168f6;
+  }
+}
+/**/
+.SelectBox_2 {
+  @include FormHeight;
 
-    &.Error {
-      border-color: #ff3838;
-      color: #ff3838;
-    }
+  &:has(option[value='']:checked) {
+    color: #a3a1b1;
+  }
+  
+  &[disabled] {
+    //pointer-events: none;
+    //color: #a6a6a6;
+    //background-color: #e1e1e1;
+    //border-color: #a6a6a6;
+  }
 
-    &[disabled] {
-      pointer-events: none;
-      color: #a6a6a6;
-      background-color: #e1e1e1;
-      border-color: #a6a6a6;
-    }
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  box-sizing: border-box;
+
+  /**/
+  display: flex;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  border-bottom: 2px solid #26262c;
+  background-image: url(/icon/2312301200.svg);
+  background-size: 51px;
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-color: white;
+
+  &:focus {
+    //box-shadow: 0px 0px 6px 0px rgba(166, 166, 166, 0.6);
+  }
+
+  &.Success {
+    border-color: #4168f6;
   }
 }
 

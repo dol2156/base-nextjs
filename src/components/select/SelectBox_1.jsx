@@ -5,16 +5,14 @@ export default function SelectBox_1() {
       <div className="SampleList">
         <div>
           <label className="FormLabel_1">Basic</label>
-          <div className="SelectBox_1">
-            <select defaultValue={''}>
-              <option value="" disabled={true} hidden={true}>
-                선택
-              </option>
-              <option value="aaa">AAA</option>
-              <option value="bbb">BBB</option>
-              <option value="ccc">CCC</option>
-            </select>
-          </div>
+          <select className={`SelectBox_1`} defaultValue={''}>
+            <option value="" disabled={true} hidden={true}>
+              선택
+            </option>
+            <option value="aaa">AAA</option>
+            <option value="bbb">BBB</option>
+            <option value="ccc">CCC</option>
+          </select>
         </div>
         <div>
           <label className="FormLabel_1">.Success</label>
@@ -32,7 +30,7 @@ export default function SelectBox_1() {
         <div>
           <label className="FormLabel_1">.Error</label>
           <div className="SelectBox_1">
-            <select defaultValue={""} className="Error">
+            <select defaultValue={''} className="Error">
               <option value="" disabled={true} hidden={true}>
                 선택
               </option>
@@ -45,7 +43,7 @@ export default function SelectBox_1() {
         <div>
           <label className="FormLabel_1">[disabled]</label>
           <div className="SelectBox_1">
-            <select defaultValue={""} disabled={true}>
+            <select defaultValue={''} disabled={true}>
               <option value="" disabled={true} hidden={true}>
                 선택
               </option>
@@ -63,9 +61,7 @@ export default function SelectBox_1() {
                 선택
               </option>
               <option value="aaa">AAA</option>
-              <option value="bbb">
-                BBB
-              </option>
+              <option value="bbb">BBB</option>
               <option value="ccc">CCC</option>
             </select>
           </div>
