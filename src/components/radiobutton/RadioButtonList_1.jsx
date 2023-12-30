@@ -37,22 +37,22 @@ export default function RadioButtonList_1() {
                       </div>
                     </button>
                     <button className="text-left">
-                      <label className="FormLabel_1">LabalUi</label>
+                      <label className="FormLabel_1">LabelUi</label>
                       <div className="CenterLeft">
                         <label className="FormLabelBox">
                           <input className={`RadioButton_1 ${obj}`} type="checkbox" />
-                          <div className="LabalUi">
+                          <div className="LabelUi">
                             Checkbox_{idx} {obj}
                           </div>
                         </label>
                       </div>
                     </button>
                     <button className="text-left">
-                      <label className="FormLabel_1">LabalUi_Disabled</label>
+                      <label className="FormLabel_1">LabelUi_Disabled</label>
                       <div className="CenterLeft">
                         <label className="FormLabelBox">
                           <input className={`RadioButton_1 ${obj}`} type="checkbox" disabled />
-                          <div className="LabalUi">
+                          <div className="LabelUi">
                             Checkbox_{idx} {obj}
                           </div>
                         </label>

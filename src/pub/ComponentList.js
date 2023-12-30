@@ -26,16 +26,6 @@ ComponentList.alert = [];
       경로 : '@/components/bottom_sheet/BottomSheet_2',
       컴포넌트 : dynamic(() => import('@/components/bottom_sheet/BottomSheet_2'), { ssr : false }),
     });
-    ComponentList.checkbox = [];
-    ComponentList.checkbox.push({
-      경로 : '@/components/checkbox/CheckboxList_1',
-      컴포넌트 : dynamic(() => import('@/components/checkbox/CheckboxList_1'), { ssr : false }),
-    });
-    
-    ComponentList.checkbox.push({
-      경로 : '@/components/checkbox/ToggleButton_1',
-      컴포넌트 : dynamic(() => import('@/components/checkbox/ToggleButton_1'), { ssr : false }),
-    });
     ComponentList.common = [];
     ComponentList.common.push({
       경로 : '@/components/common/Badge_1',
@@ -70,6 +60,11 @@ ComponentList.alert = [];
     ComponentList.common.push({
       경로 : '@/components/common/PagingSet_1',
       컴포넌트 : dynamic(() => import('@/components/common/PagingSet_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/ToggleButton_1',
+      컴포넌트 : dynamic(() => import('@/components/common/ToggleButton_1'), { ssr : false }),
     });
     ComponentList.dropdown = [];
     ComponentList.dropdown.push({
@@ -170,11 +165,6 @@ ComponentList.alert = [];
     ComponentList.radiobutton.push({
       경로 : '@/components/radiobutton/RadioButtonList_1',
       컴포넌트 : dynamic(() => import('@/components/radiobutton/RadioButtonList_1'), { ssr : false }),
-    });
-    ComponentList.select = [];
-    ComponentList.select.push({
-      경로 : '@/components/select/SelectBox_1',
-      컴포넌트 : dynamic(() => import('@/components/select/SelectBox_1'), { ssr : false }),
     });
     ComponentList.textinput = [];
     ComponentList.textinput.push({

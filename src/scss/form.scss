@@ -2,7 +2,8 @@
 
 /**/
 @mixin ButtonSizeVariation {
-  /*fixed*/
+  @include FormHeight;
+
   display: flex;
   padding: 0 1.25em;
   justify-content: center;
@@ -11,29 +12,24 @@
   border-style: solid;
   gap: 5px;
 
-  /*dynamic*/
-  height: 40px;
   border-radius: 12px;
   font-size: 16px;
   font-weight: 600;
   border-width: 1px;
 
   &.Sm {
-    height: 32px;
     border-radius: 10px;
     font-size: 14px;
     font-weight: 500;
   }
 
   &.Lg {
-    height: 44px;
     border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
   }
 
   &.Xl {
-    height: 52px;
     border-radius: 14px;
     font-size: 18px;
     font-weight: 600;
@@ -41,29 +37,24 @@
 
   /* $PcMinWid 이상 화면*/
   @media screen and (min-width: $PcMinWid) {
-    /*dynamic*/
-    height: 48px;
     border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
     border-width: 1px;
 
     &.Sm {
-      height: 40px;
       border-radius: 10px;
       font-size: 14px;
       font-weight: 500;
     }
 
     &.Lg {
-      height: 52px;
       border-radius: 12px;
       font-size: 16px;
       font-weight: 600;
     }
 
     &.Xl {
-      height: 60px;
       border-radius: 14px;
       font-size: 18px;
       font-weight: 600;
@@ -292,18 +283,30 @@
   }
 }
 /**/
+.FormLabelBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+/**/
 .Checkbox_1 {
   @include CheckBoxPublic;
   @include ChkSizeVariation;
   background-image: url(/icon/basic/chk_1.svg);
   &:checked {
     background-image: url(/icon/basic/chk_1_on.svg);
-    + .LabalUi {
+    + * {
       color: #ff3838 !important;
     }
   }
   &[disabled] {
     background-image: url(/icon/basic/chk_1_disabled.svg);
+    + * {
+      color: #ddd;
+    }
   }
 }
 /**/
@@ -411,11 +414,11 @@
 /**/
 .SelectBox_1 {
   @include FormHeight;
-  
+
   &:has(option[value='']:checked) {
     color: #a3a1b1;
   }
-  
+
   &[disabled] {
     pointer-events: none;
     color: #a6a6a6;
@@ -459,7 +462,7 @@
   &:has(option[value='']:checked) {
     color: #a3a1b1;
   }
-  
+
   &[disabled] {
     //pointer-events: none;
     //color: #a6a6a6;
@@ -502,7 +505,7 @@
   background-image: url(/icon/basic/rdo_1.svg);
   &:checked {
     background-image: url(/icon/basic/rdo_1_on.svg);
-    + .LabalUi {
+    + .LabelUi {
       color: #ff3838 !important;
     }
   }
