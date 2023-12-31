@@ -11,7 +11,7 @@ export default function Layout({ children }) {
   const { DASHBOARD_LEFT_OPEN } = GVar;
 
   return (
-    <div id="PageDashboard" className={`RRR flex flex-row gap-[0] h-[--vh-100] overflow-hidden`}>
+    <div id="PageDashboard" className={`RRR flex flex-row gap-[0] h-[100vh] overflow-hidden`}>
       <div className={`Fc overflow-auto`}>
         <div className={`${!DASHBOARD_LEFT_OPEN ? 'hidden' : ''}`}>
           <Nav_1 />

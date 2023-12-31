@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <>
       <Header_2 />
-      <main className={`RR h-[calc(var(--vh-100)-var(--dashboard-header-hei))] overflow-hidden`}>
+      <main className={`RR h-[calc(100vh-var(--dashboard-header-hei))] overflow-hidden`}>
         <div className={`RRR flex flex-row gap-[0] h-full`}>
           <div className={`Fc h-full overflow-auto`}>
             <Nav_2 />

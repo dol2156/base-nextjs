@@ -1,5 +1,5 @@
-import dynamic from 'next/dynamic';
 
+import dynamic from 'next/dynamic';
 const ComponentList = {};
 ComponentList.alert = [];
     ComponentList.alert.push({

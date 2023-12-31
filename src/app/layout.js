@@ -5,7 +5,7 @@ import GlobalVar from '@/app/GlobalVar';
 import AppInfo from '@/components/etc/AppInfo';
 import Modal from '@/components/etc/Modal';
 import Head_1 from '@/components/meta/Head_1';
-import { appIsReady, initCssVar } from '@/js/common';
+import { appIsReady } from '@/js/common';
 import '@/scss/global.scss';
 import { useEffect, useState } from 'react';
 
@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     // mount
     console.log('app unmount');
-    initCssVar();
     appIsReady();
   }, []);
 
