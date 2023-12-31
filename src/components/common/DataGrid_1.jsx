@@ -15,7 +15,7 @@ export default function DataGrid_1() {
             {[...Array(100).keys()].map((obj, idx) => {
               return (
                 <Fragment key={idx}>
-                  <article className={`flex gap-[0]`}>
+                  <article>
                     <div className={`w-[70px]`}>{idx + 1}</div>
                     <div className={`flex-1`}>
                       Lorem Ipsum is simply dummy text of the printing and

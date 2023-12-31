@@ -376,6 +376,15 @@
   font-size: 14px;
   line-height: 18px;
 
+  &.NoScroll {
+    > .Inner {
+      > .Head,
+      > .Body {
+        overflow: hidden !important;
+      }
+    }
+  }
+
   > .Inner {
     border-radius: 12px;
     overflow: hidden;
@@ -411,6 +420,8 @@
       overflow: auto;
       background-color: white;
       > article {
+        display: flex;
+
         &:not(:first-child) {
           border-top: 1px solid #e0dfea;
         }
