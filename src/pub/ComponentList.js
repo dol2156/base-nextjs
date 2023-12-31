@@ -1,5 +1,5 @@
-
 import dynamic from 'next/dynamic';
+
 const ComponentList = {};
 ComponentList.alert = [];
     ComponentList.alert.push({
@@ -30,6 +30,11 @@ ComponentList.alert = [];
     ComponentList.common.push({
       경로 : '@/components/common/Badge_1',
       컴포넌트 : dynamic(() => import('@/components/common/Badge_1'), { ssr : false }),
+    });
+    
+    ComponentList.common.push({
+      경로 : '@/components/common/DataGrid_1',
+      컴포넌트 : dynamic(() => import('@/components/common/DataGrid_1'), { ssr : false }),
     });
     
     ComponentList.common.push({
