@@ -106,12 +106,6 @@ export default [
                 EXTERNAL_LINK: null,
               },
               {
-                LABEL: 'Dropdown',
-                LAYOUT: 'example',
-                PAGE_KEY: 'dropdown',
-                EXTERNAL_LINK: null,
-              },
-              {
                 LABEL: 'Button',
                 LAYOUT: 'example',
                 PAGE_KEY: 'button',
@@ -127,6 +121,12 @@ export default [
                 LABEL: '라디오버튼',
                 LAYOUT: 'example',
                 PAGE_KEY: 'radiobutton',
+                EXTERNAL_LINK: null,
+              },
+              {
+                LABEL: 'Dropdown',
+                LAYOUT: 'example',
+                PAGE_KEY: 'dropdown',
                 EXTERNAL_LINK: null,
               },
             ],

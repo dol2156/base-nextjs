@@ -1,7 +1,7 @@
 'use client';
 
 // import { Fragment } from 'react';
-import { Fragment } from 'react';
+import {Fragment} from 'react';
 
 export default function Page() {
   return (
@@ -50,24 +50,33 @@ export default function Page() {
         <section className="HBox mt-[50px]">
           <div className="Inner">
             <h2 className="H2">Size</h2>
-            <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
-              {['Xl', 'Lg', 'Md', 'Sm'].map((obj, idx) => {
+            {
+              [...Array(10).keys()].map((obj2, idx2) => {
                 return (
-                  <Fragment key={idx}>
-                    <div>
-                      <select className={`SelectBox_1 ${obj} w-full`} defaultValue={''}>
-                        <option value="" disabled={true} hidden={true}>
-                          SelectBox_1.{obj}
-                        </option>
-                        <option value="aaa">AAA</option>
-                        <option value="bbb">BBB</option>
-                        <option value="ccc">CCC</option>
-                      </select>
-                    </div>
+                  <Fragment key={idx2}>
+                    <article className={`mt-[20px] grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-[0] items-center justify-center gap-[10px]`}>
+                      {['Xl', 'Lg', 'Md', 'Sm'].map((obj, idx) => {
+                        return (
+                          <Fragment key={idx}>
+                            <div>
+                              <select className={`SelectBox_${idx2+1} ${obj} w-full`} defaultValue={''}>
+                                <option value="" disabled={true} hidden={true}>
+                                  SelectBox_{idx2+1}.{obj}
+                                </option>
+                                <option value="aaa">AAA</option>
+                                <option value="bbb">BBB</option>
+                                <option value="ccc">CCC</option>
+                              </select>
+                            </div>
+                          </Fragment>
+                        );
+                      })}
+                    </article>
                   </Fragment>
                 );
-              })}
-            </article>
+              })
+            }
+          
           </div>
         </section>
       </main>
