@@ -65,7 +65,9 @@ export default [
             PAGE_KEY: 'common',
             EXTERNAL_LINK: null,
           },
-          {
+        ],
+      },
+      {
             LABEL: 'Layout',
             LAYOUT: null,
             PAGE_KEY: null,
@@ -161,8 +163,6 @@ export default [
               },
             ],
           },
-        ],
-      },
       {
         LABEL: '라이브러리 샘플링',
         LAYOUT: null,
