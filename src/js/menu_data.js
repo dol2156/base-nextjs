@@ -123,12 +123,6 @@ export default [
                 PAGE_KEY: 'radiobutton',
                 EXTERNAL_LINK: null,
               },
-              {
-                LABEL: 'Dropdown',
-                LAYOUT: 'example',
-                PAGE_KEY: 'dropdown',
-                EXTERNAL_LINK: null,
-              },
             ],
           },
           {

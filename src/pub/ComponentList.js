@@ -71,11 +71,6 @@ ComponentList.alert = [];
       경로 : '@/components/common/ToggleButton_1',
       컴포넌트 : dynamic(() => import('@/components/common/ToggleButton_1'), { ssr : false }),
     });
-    ComponentList.dropdown = [];
-    ComponentList.dropdown.push({
-      경로 : '@/components/dropdown/Dropdown_1',
-      컴포넌트 : dynamic(() => import('@/components/dropdown/Dropdown_1'), { ssr : false }),
-    });
     ComponentList.etc = [];
     ComponentList.etc.push({
       경로 : '@/components/etc/AppInfo',
