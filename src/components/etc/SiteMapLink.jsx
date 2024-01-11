@@ -10,6 +10,11 @@ export default function SiteMapLink({ data }) {
       if (!LAYOUT) LAYOUT = 'basic';
       href = `/${LAYOUT}/${PAGE_KEY}`;
     }
+    
+    if (EXTERNAL_LINK) {
+      href = EXTERNAL_LINK;
+    }
+    
     return href;
   };
 
