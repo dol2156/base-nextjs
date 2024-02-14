@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run cmd\" \"npm run wc\" \"npm run ccd\" \"npm run next_dev\"",
+    "dev": "concurrently \"npm run cmd\" \"npm run wc\" \"npm run ccd\" \"next dev\"",
     "next_dev": "next dev -H \"$(node -p \"require('ip').address()\")\"",
     "build": "next build",
     "start": "next start",
